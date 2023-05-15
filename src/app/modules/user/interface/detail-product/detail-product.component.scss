@@ -30,10 +30,16 @@ h3 {
 }
 
 button {
-  padding-left: 50px !important;
-  padding-right: 50px !important;
+  padding-left: 40px !important;
+  padding-right: 40px !important;
 
 }
 
+.d-content{
+  display: contents;
+  min-height: 700px;
+}
 
-
+.row{
+  background-color: #19181f;
+}

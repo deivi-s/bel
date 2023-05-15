@@ -187,7 +187,11 @@ mat-sidenav:not(.mat-drawer-opened) .profileTitle {
   display: block !important;
 } */
 
-.detail span{
+.detail span {
   font-size: 1.35rem !important;
   padding: 11px !important;
+}
+
+.mat-toolbar {
+  z-index: 1 !important;
 }
