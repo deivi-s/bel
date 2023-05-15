@@ -13,7 +13,7 @@ import { HttpClientModule } from '@angular/common/http';
 
 const routes: Routes = [
   {
-    path: 'recommendations',
+    path: 'recommendation',
     loadChildren: () =>
       import('./modules/user/user.module').then((m) => m.UserModule)
   },
