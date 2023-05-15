@@ -1,0 +1,29 @@
+<mat-nav-list disableRipple>
+  <mat-list-item class="menu avatar">
+    <button mat-button class="profile" disableRipple routerLink="/company/dashboard">
+      <img src="assets/icon-menu/logo.svg" />
+    </button>
+  </mat-list-item>
+  <mat-list-item class="menu" routerLinkActive="activeLink">
+    <a routerLink="/recommendations">
+      <button mat-button disableRipple>
+        <div class="menu-content">
+          <img src="assets/menu/recomendacion.svg" class="icon" />
+          <span class="menu-span">Recomendaciones</span>
+          <img src="assets/menu/arrow.svg" class="arrow" />
+        </div>
+      </button>
+    </a>
+  </mat-list-item>
+
+  <mat-list-item class="menu" routerLinkActive="activeLink">
+    <a routerLink="/profile">
+      <button mat-button disableRipple>
+        <div class="menu-content">
+          <img src="assets/menu/perfil.svg" class="icon" />
+          <span class="menu-span">Mi Perfil</span>
+          <img src="assets/menu/arrow.svg" class="arrow" />
+        </div>
+      </button>
+    </a>
+  </mat-list-item>

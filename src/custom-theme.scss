@@ -1,0 +1,55 @@
+
+@use '@angular/material' as mat;
+@include mat.core();
+
+
+$bel-green: (
+    50 : #faeae1,
+    100 : #f2ccb3,
+    200 : #eaaa80,
+    300 : #e1874d,
+    400 : #da6e27,
+    500 : #d45401,
+    600 : #cf4d01,
+    700 : #c94301,
+    800 : #c33a01,
+    900 : #b92900,
+    A100 : #ffe7e2,
+    A200 : #ffbbaf,
+    A400 : #ff907c,
+    A700 : #ff7b63,
+    contrast: (
+        50 : #000000,
+        100 : #000000,
+        200 : #000000,
+        300 : #000000,
+        400 : #000000,
+        500 : #ffffff,
+        600 : #ffffff,
+        700 : #ffffff,
+        800 : #ffffff,
+        900 : #ffffff,
+        A100 : #000000,
+        A200 : #000000,
+        A400 : #000000,
+        A700 : #000000,
+    )
+);
+
+
+
+
+
+/* $bel-primary: mat.define-palette(mat.$indigo-palette); */
+$bel-primary: mat.define-palette($bel-green);
+$bel-accent: mat.define-palette(mat.$pink-palette, A200, A100, A400);
+$bel-warn: mat.define-palette(mat.$red-palette);
+
+$bel-theme: mat.define-light-theme((
+  color: (
+    primary: $bel-primary,
+    accent: $bel-accent,
+    warn: $bel-warn
+  )
+));
+@include mat.all-component-themes($bel-theme);

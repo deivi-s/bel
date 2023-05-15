@@ -1,0 +1,99 @@
+mat-nav-list {
+  width: 100%;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+
+mat-list-item {
+  /*   color: white; */
+  border-radius: 8px;
+  margin-top: 10px !important;
+}
+
+a,
+a:link,
+a:visited,
+a:active {
+  color: rgba(255, 255, 255, 0.5) !important;
+  font-size: 13px;
+  font-weight: 500;
+  display: block;
+  width: 100%;
+}
+
+a:hover {
+  /*   color: white !important; */
+}
+
+a span {
+  display: inline-block;
+}
+
+.activeLink {
+  background-color: rgba(255, 255, 255, 0.1);
+  color: white !important;
+}
+
+.activeLink a,
+.activeLink a:link,
+.activeLink a:visited,
+.activeLink a:active {
+  color: white !important;
+  font-size: 13px;
+  font-weight: 500;
+  display: block;
+  width: 100%;
+}
+
+.mat-button-wrapper {
+  display: flex !important;
+  flex-direction: column !important;
+}
+
+
+.mat-list-item:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.profile  {
+  padding-top: 0px !important;
+}
+.profile img {
+  width: 90%;
+}
+
+.mat-list-item {
+  height: 45px !important;
+}
+
+.avatar {
+  margin-bottom: 60px;
+}
+
+.avatar button {
+  padding: 12px;
+}
+
+.icon {
+  width: 19px !important;
+}
+
+.icon span {
+  padding-top: 1px;
+}
+
+.menu-span {
+  margin-left: 13px !important;
+}
+
+.arrow {
+  width: 5.7px !important;
+  margin-left: auto !important;
+}
+
+.menu-content {
+  display: flex !important;
+  width: 180px !important;  
+}
+
