@@ -26,20 +26,27 @@ h3 {
 }
 
 .line {
-  line-height: normalƒ;
+  line-height: normal;
 }
 
 button {
-  padding-left: 40px !important;
-  padding-right: 40px !important;
+  padding-left: 40px;
+  padding-right: 40px;
 
 }
 
-.d-content{
+.d-content {
   display: contents;
-  min-height: 700px;
 }
 
-.row{
+.row {
   background-color: #19181f;
+}
+
+.img-center {
+  text-align: center !important;
+}
+
+.white {
+  color: white;
 }

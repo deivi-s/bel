@@ -13,11 +13,10 @@ h3 {
 }
 
 .title-white {
-    font-family: 'Poppins Regular';
+    font-family: 'Montserrat Regular';
     color: white;
     display: block;
     text-align: justify;
-    font-size: 1.2rem !important;
 }
 
 .form-control:focus {
@@ -34,7 +33,7 @@ h3 {
 }
 
 input {
-    font-family: "Poppins Regular";
+    font-family: "Montserrat Regular";
     color: #657684 !important;
     font-size: 0.75rem !important;
     background: #faebd700;
@@ -65,9 +64,9 @@ button {
 }
 
 .circulo {
-    border-radius: 50% 50% 50% 50%;
-    width: 200px;
-    height: 200px;
+    border-radius:50% 50% 50% 50%;  
+    width:200px;
+    height:200px;
     margin-left: auto;
     margin-right: auto;
     display: block;
@@ -81,42 +80,4 @@ button {
 
 .circulo-titulo {
     position: absolute;
-}
-
-.span-white {
-    color: white;
-    float: right;
-    font-family: "Poppins Regular";
-    font-size: 0.8rem;
-}
-
-.span-white-center {
-    color: white;
-    font-family: "Poppins Regular";
-    font-size: 0.8rem;
-}
-
-.span-white-center b {
-    color: #D45401;
-    font-family: "Poppins Regular";
-    font-size: 0.8rem;
-}
-
-.transparent {
-    background: #4c4c5600;
-    border: 1px solid #4C4C56;
-}
-
-.google {
-    font-size: 0.8rem;
-}
-
-.email {
-    font-family: "Poppins Bold";
-    color: #909090;
-    font-size: 0.8rem;
-}
-
-hr {
-    color: #909090;
 }

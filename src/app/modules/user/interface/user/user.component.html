@@ -1,168 +1,56 @@
 <div class="contenido">
-    <h1>Mis recomendaciones para tí</h1>
-    <span></span>
+  <h1>Mis recomendaciones para tí {{ pro.length }} </h1>
+  <span></span>
 </div>
 
 <app-container>
-    <div class="row pt-3">
-        <div class="col-md-3 col-sm-6 mt-2"><button mat-raised-button class="color-primary w-100">Todos</button></div>
-        <div class="col-md-3 col-sm-6 mt-2"><button mat-raised-button class="color-secondary w-100">Ceras</button></div>
-        <div class="col-md-3 col-sm-6 mt-2"><button mat-raised-button class="color-secondary w-100">Aceite
-                Capilar</button></div>
-        <div class="col-md-3 col-sm-6 mt-2"><button mat-raised-button class="color-secondary w-100">Shampoo</button>
-        </div>
-
-
-        <div class="d-flex pt-5 mt-5 pb-5">
-            <h3>Ceras para el cabello</h3>
-        </div>
-        <div class="row">
-            <div class="col mt-2 col-xs-12" (click)="detail(1)">
-                <div class="product p-4">
-                    <div class="mg">
-                        <img src="/assets/products/pro-1.jpg" width="180">
-                    </div>
-                    <div class="pt-0 pb-0 mb-0">
-                        <h5 class="mb-0">Polvo Texturizador De Cabello Y Barba 8gr </h5>
-                    </div>
-                    <div class="pt-0 pb-0 d-flex flex-column">
-                        <h1 class="yellow mb-0">74%</h1>
-                        <span class="span-black">Recomedado para ti</span>
-                    </div>
-                </div>
-            </div>
-            <div class="col mt-2 col-xs-12">
-                <div class="product p-4">
-                    <div class="mg">
-                        <img src="/assets/products/pro-1.jpg" width="180">
-                    </div>
-                    <div class="pt-0 pb-0 mb-0">
-                        <h5 class="mb-0">Polvo Texturizador De Cabello Y Barba 8gr </h5>
-                    </div>
-                    <div class="pt-0 pb-0 d-flex flex-column">
-                        <h1 class="yellow mb-0">74%</h1>
-                        <span class="span-black">Recomedado para ti</span>
-                    </div>
-                </div>
-            </div>
-            <div class="col mt-2 col-xs-12">
-                <div class="product p-4">
-                    <div class="mg">
-                        <img src="/assets/products/pro-1.jpg" width="180">
-                    </div>
-                    <div class="pt-0 pb-0 mb-0">
-                        <h5 class="mb-0">Polvo Texturizador De Cabello Y Barba 8gr </h5>
-                    </div>
-                    <div class="pt-0 pb-0 d-flex flex-column">
-                        <h1 class="yellow mb-0">74%</h1>
-                        <span class="span-black">Recomedado para ti</span>
-                    </div>
-                </div>
-            </div>
-            <div class="col mt-2 col-xs-12">
-                <div class="product p-4">
-                    <div class="mg">
-                        <img src="/assets/products/pro-1.jpg" width="180">
-                    </div>
-                    <div class="pt-0 pb-0 mb-0">
-                        <h5 class="mb-0">Polvo Texturizador De Cabello Y Barba 8gr </h5>
-                    </div>
-                    <div class="pt-0 pb-0 d-flex flex-column">
-                        <h1 class="yellow mb-0">74%</h1>
-                        <span class="span-black">Recomedado para ti</span>
-                    </div>
-                </div>
-            </div>
-            <div class="col mt-2 col-xs-12">
-                <div class="product p-4">
-                    <div class="mg">
-                        <img src="/assets/products/pro-1.jpg" width="180">
-                    </div>
-                    <div class="pt-0 pb-0 mb-0">
-                        <h5 class="mb-0">Polvo Texturizador De Cabello Y Barba 8gr </h5>
-                    </div>
-                    <div class="pt-0 pb-0 d-flex flex-column">
-                        <h1 class="yellow mb-0">74%</h1>
-                        <span class="span-black">Recomedado para ti</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="d-flex pt-5 mt-5 pb-5">
-            <h3>Aceite capilar</h3>
-        </div>
-        <div class="row">
-            <div class="col mt-2 col-xs-12">
-                <div class="product p-4">
-                    <div class="mg">
-                        <img src="/assets/products/pro-1.jpg" width="180">
-                    </div>
-                    <div class="pt-0 pb-0 mb-0">
-                        <h5 class="mb-0">Polvo Texturizador De Cabello Y Barba 8gr </h5>
-                    </div>
-                    <div class="pt-0 pb-0 d-flex flex-column">
-                        <h1 class="yellow mb-0">74%</h1>
-                        <span class="span-black">Recomedado para ti</span>
-                    </div>
-                </div>
-            </div>
-            <div class="col mt-2 col-xs-12">
-                <div class="product p-4">
-                    <div class="mg">
-                        <img src="/assets/products/pro-1.jpg" width="180">
-                    </div>
-                    <div class="pt-0 pb-0 mb-0">
-                        <h5 class="mb-0">Polvo Texturizador De Cabello Y Barba 8gr </h5>
-                    </div>
-                    <div class="pt-0 pb-0 d-flex flex-column">
-                        <h1 class="yellow mb-0">74%</h1>
-                        <span class="span-black">Recomedado para ti</span>
-                    </div>
-                </div>
-            </div>
-            <div class="col mt-2 col-xs-12">
-                <div class="product p-4">
-                    <div class="mg">
-                        <img src="/assets/products/pro-1.jpg" width="180">
-                    </div>
-                    <div class="pt-0 pb-0 mb-0">
-                        <h5 class="mb-0">Polvo Texturizador De Cabello Y Barba 8gr </h5>
-                    </div>
-                    <div class="pt-0 pb-0 d-flex flex-column">
-                        <h1 class="yellow mb-0">74%</h1>
-                        <span class="span-black">Recomedado para ti</span>
-                    </div>
-                </div>
-            </div>
-            <div class="col mt-2 col-xs-12">
-                <div class="product p-4">
-                    <div class="mg">
-                        <img src="/assets/products/pro-1.jpg" width="180">
-                    </div>
-                    <div class="pt-0 pb-0 mb-0">
-                        <h5 class="mb-0">Polvo Texturizador De Cabello Y Barba 8gr </h5>
-                    </div>
-                    <div class="pt-0 pb-0 d-flex flex-column">
-                        <h1 class="yellow mb-0">74%</h1>
-                        <span class="span-black">Recomedado para ti</span>
-                    </div>
-                </div>
-            </div>
-            <div class="col mt-2 col-xs-12">
-                <div class="product p-4">
-                    <div class="mg">
-                        <img src="/assets/products/pro-1.jpg" width="180">
-                    </div>
-                    <div class="pt-0 pb-0 mb-0">
-                        <h5 class="mb-0">Polvo Texturizador De Cabello Y Barba 8gr </h5>
-                    </div>
-                    <div class="pt-0 pb-0 d-flex flex-column">
-                        <h1 class="yellow mb-0">74%</h1>
-                        <span class="span-black">Recomedado para ti</span>
-                    </div>
-                </div>
-            </div>
-        </div>
+  <div class="row pt-3">
+    <div class="col-md-3 col-sm-6 mt-2"><button mat-raised-button class="color-primary w-100" (click)="filter()">Todos</button></div>
+    <div class="col-md-3 col-sm-6 mt-2"><button mat-raised-button class="color-secondary w-100" (click)="filter(1)">Cabello</button></div>
+    <div class="col-md-3 col-sm-6 mt-2"><button mat-raised-button class="color-secondary w-100" (click)="filter(2)">Rostro</button>
     </div>
+    <div class="col-md-3 col-sm-6 mt-2"><button mat-raised-button class="color-secondary w-100" (click)="filter(3)">Piel</button>
+    </div>
+
+    <div class="d-flex pt-5 mt-5 pb-5">
+      <h3>Ceras para el cabello</h3>
+    </div>
+
+    <div class="row d-flex justify-content-center row-cols-5" *ngIf="allProducts.length && !pro.length">
+      <div class="col-lg-3 col-md-6 mt-3 col-xl-2" (click)="detail(producto.id, producto.porcentaje)" *ngFor="let producto of allProducts">
+        <div class="product p-4">
+          <div class="img">
+            <img [src]="producto.foto" width="180" class="img-fluid">
+          </div>
+          <div class="pt-0 pb-0 mb-0">
+            <h5 class="mb-0">{{ producto.nombre }}</h5>
+          </div>
+          <div class="pt-0 pb-0 d-flex flex-column">
+            <h1 class="yellow mb-0">{{ producto.porcentaje }} %</h1>
+            <span class="span-black">Recomedado para ti</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row d-flex justify-content-center row-cols-5" *ngIf="pro.length">
+      <div class="col-lg-3 col-md-6 mt-3 col-xl-2" (click)="detail(producto.id, producto.porcentaje)" *ngFor="let producto of pro">
+        <div class="product p-4">
+          <div class="img">
+            <img [src]="producto.foto" width="180" class="img-fluid">
+          </div>
+          <div class="pt-0 pb-0 mb-0">
+            <h5 class="mb-0">{{ producto.nombre }}</h5>
+          </div>
+          <div class="pt-0 pb-0 d-flex flex-column">
+            <h1 class="yellow mb-0">{{ producto.porcentaje }} %</h1>
+            <span class="span-black">Recomedado para ti</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
 </app-container>

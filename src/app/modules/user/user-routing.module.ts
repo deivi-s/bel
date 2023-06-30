@@ -1,7 +1,15 @@
 import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
+import {
+  RouterModule,
+  Routes,
+} from '@angular/router';
+
+import {
+  DetailProductComponent,
+} from './interface/detail-product/detail-product.component';
+import { PerfilComponent } from './interface/perfil/perfil.component';
+import { RecommendComponent } from './interface/recommend/recommend.component';
 import { UserComponent } from './interface/user/user.component';
-import { DetailProductComponent } from './interface/detail-product/detail-product.component';
 
 const routes: Routes = [
   {
@@ -9,9 +17,17 @@ const routes: Routes = [
     component: UserComponent
   },
   {
-    path: 'detail/:id',
+    path: 'detail/:id/:porcentaje',
     component: DetailProductComponent
   },
+  {
+    path: 'resume',
+    component: RecommendComponent
+  },
+  {
+    path: 'user',
+    component: PerfilComponent
+  }
 
 ];
 

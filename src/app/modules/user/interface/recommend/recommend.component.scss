@@ -1,0 +1,52 @@
+.contenido {
+    background-image: url('/assets/content/banner.svg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100%;
+    background-position: center center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+h1,
+h3 {
+    font-family: 'Montserrat Bold';
+    color: white;
+    /* text-align: center; */
+}
+
+.title-white {
+    font-family: 'Montserrat Regular';
+    color: white;
+    display: block;
+    text-align: justify;
+}
+
+button {
+    padding: 5px;
+    font-size: 1rem !important;
+}
+
+.mat-button-toggle-standalone.mat-button-toggle-appearance-standard,
+.mat-button-toggle-group-appearance-standard {
+    border: none !important;
+}
+
+.multi {
+    width: 100%;
+}
+
+.mat-button-toggle {
+    padding-top: 12px;
+    padding-bottom: 12px;
+}
+
+.mat-button-toggle-standalone,
+.mat-button-toggle-group {
+    display: flex !important;
+}
+
+.mat-button-toggle-checked.mat-button-toggle-appearance-standard {
+    color: #f44336;
+}

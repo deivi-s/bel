@@ -95,6 +95,11 @@ button .mat-button-wrapper {
   justify-content: center;
 }
 
+
+.color-black .mat-button-wrapper{
+  color: black !important;
+}
+
 button .mat-button-wrapper img {
   width: 32px;
 }
@@ -155,10 +160,23 @@ button {
   border-radius: 20px !important;
 }
 
+.color-black {
+  background: white;
+  color: black !important;
+  border-radius: 20px !important;
+}
+
 .color-secondary {
   background: #838383;
   color: white;
   border-radius: 20px !important;
+}
+
+.color-transparent {
+  background: rgb(0 0 0 / 0%);
+  color: white;
+  border-radius: 20px !important;
+  border: 2px solid #D45401 !important;
 }
 
 @media (min-width: 1200px) {
@@ -166,32 +184,31 @@ button {
     max-width: 1300px !important;
   }
 }
-
-/* mat-sidenav:not(.mat-drawer-opened) {
-  transform: none !important;
-  visibility: visible !important;
-  width: 60px !important;
-  overflow: hidden;
-}
-
-mat-sidenav:not(.mat-drawer-opened) div.leftNav div.navProfile img {
-  width: 40px; margin: 16px 0 0px 0;
-}
-mat-sidenav:not(.mat-drawer-opened) .navTitle,
-mat-sidenav:not(.mat-drawer-opened) .profileTitle {
-  display: none;
-}
-
-
-.mat-drawer[style*="visibility: hidden"] {
-  display: block !important;
-} */
-
 .detail span {
-  font-size: 1.35rem !important;
-  padding: 11px !important;
+  font-size: 1.35rem;
+  padding: 11px;
 }
 
 .mat-toolbar {
   z-index: 1 !important;
+}
+
+.mat-drawer-content {
+  background: #19181e;
+}
+
+@media only screen and (min-width: 200px) and (max-width: 767px) {
+  .detail span {
+    font-size: 1rem !important;
+  }
+}
+
+.mat-warn{
+  background: #D45401 !important;
+  font-family: "Poppins Bold";
+}
+
+mat-button-toggle button{
+  width: 50% !important;
+  font-size: 1rem !important;
 }

@@ -1,51 +1,21 @@
 <app-container>
-  <div class="vh-100">
+  <div class="vh-100 p-5">
     <div class="d-content">
-      <div class="row" >
-        <div class="col-md-6 col-xs-12 pt-5 col-sm-12">
-          <img src="/assets/products/pro-2.jpg" alt="" class="img-fluid">
+      <div class="row">
+        <div class="col-12 col-xs-12 col-sm-12 col-xl-6 pt-5 img-center">
+          <img src="{{ product?.foto }}" alt="" class="img-fluid" width="486" height="524">
         </div>
-        <div class="col-md-6 col-xs-12 pt-5 col-sm-12">
-          <h1>Óleo reparador Cabello Seco</h1>
-
-          <div class="pb-2">
-            <span class="title-orange">Bio tecnología Pró-teia</span>
-            <span class="title-white">Inspirada en la inteligencia de la naturaleza y en la belleza de la ciencia. Natura
-              Lumina creó la
-              exclusiva
-              Biotecnología Pró-teia para un tratamiento capilar de precisión. Rellena las hebras desde adentro hacia
-              afuera,
-              desde los microporos del córtex hasta la cutícula, en la medida exacta de cada daño.</span>
-          </div>
-
-          <div class="pb-2">
-            <span class="title-orange">Bio tecnología Pró-teia</span>
-            <span class="title-white">Inspirada en la inteligencia de la naturaleza y en la belleza de la ciencia. Natura
-              Lumina creó la
-              exclusiva
-              Biotecnología Pró-teia para un tratamiento capilar de precisión. Rellena las hebras desde adentro hacia
-              afuera,
-              desde los microporos del córtex hasta la cutícula, en la medida exacta de cada daño.</span>
-          </div>
-          <div class="pb-2">
-            <span class="title-orange">Bio tecnología Pró-teia</span>
-            <span class="title-white">Inspirada en la inteligencia de la naturaleza y en la belleza de la ciencia. Natura
-              Lumina creó la
-              exclusiva
-              Biotecnología Pró-teia para un tratamiento capilar de precisión. Rellena las hebras desde adentro hacia
-              afuera,
-              desde los microporos del córtex hasta la cutícula, en la medida exacta de cada daño.</span>
-          </div>
-          <div class="pb-2">
-            <span class="title-orange">Bio tecnología Pró-teia</span>
-            <span class="title-white">Inspirada en la inteligencia de la naturaleza y en la belleza de la ciencia. Natura
-              Lumina creó la
-              exclusiva
-              Biotecnología Pró-teia para un tratamiento capilar de precisión. Rellena las hebras desde adentro hacia
-              afuera,
-              desde los microporos del córtex hasta la cutícula, en la medida exacta de cada daño.</span>
-          </div>
-
+        <div class="col-12 col-xs-12 col-sm-12 col-xl-6 pt-5">
+          <h1>{{ product?.nombre }}</h1>
+          <mat-icon class="white">star</mat-icon>
+          <mat-icon class="white">star</mat-icon>
+          <mat-icon class="white">star</mat-icon>
+          <mat-icon class="white">star</mat-icon>
+          <mat-icon class="white">star</mat-icon>
+          <div class="pb-2 mt-3">
+            <span class="title-orange">Descripción</span>
+            <span class="title-white">{{ product?.descripcion }}</span>
+          </div><!--
 
           <div class="pb-2">
             <span class="title-orange">Contenido</span>
@@ -64,14 +34,23 @@
               -Sin pruebas en animales.<br>
               -Producto vegano.<br>
               -Frasco 100% plástico verde.<br></span>
-          </div>
+          </div> -->
 
           <div class="pb-2 mt-4">
             <span class="title-orange line">Compatibilidad</span>
-            <span class="compatibilidad">90%</span>
+            <span class="compatibilidad">{{ porcentaje }}%</span>
           </div>
 
           <button mat-button class="color-primary detail">Guardar producto</button>
+        </div>
+        <div class="col-md-12 mt-5 pt-5">
+          <h1>¿Dónde lo encuentras?</h1>
+        </div>
+        <div class="col-md-4">
+        </div>
+        <div class="col-md-4">
+        </div>
+        <div class="col-md-4">
         </div>
       </div>
     </div>

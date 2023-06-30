@@ -1,0 +1,84 @@
+<div class="contenido">
+    <div class="container">
+        <div *ngIf="!countAnswers.length">
+            <div class="pb-2 mt-3 text-center">
+                <h1>Bienvenido</h1>
+                <span class="title-white text-center pt-2">¿Qué tipo de recomendación necesitas?</span>
+            </div>
+            <div class="row pt-5 mt-2">
+                <div class="col-12 col-md-4 mt-2 text-center" *ngFor="let categorie of listCategories">
+                    <button mat-raised-button class="color-transparent w-50" (click)="mainQuestion(categorie.id)">
+                        {{ categorie.nombre }}
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <mat-button-toggle-group multiple class="row pt-5 mt-2 multi" [(ngModel)]="toggleData" *ngIf="!enviado">
+            <div *ngIf="countAnswers.length">
+                <div class="row pt-5 mt-2">
+                    <div class="pb-2 mt-3 text-center">
+                        <span class="title-white text-center pt-2">{{
+                            question.pregunta
+                            }}</span>
+                    </div>
+                    <div class="col-12 col-md-4 mt-2 text-center">
+                        <button mat-raised-button class="color-transparent w-50"
+                            *ngIf="question.opcion_a && !question.multi" (click)="answer(question.id, question.opcion_a)">
+                            {{ question.opcion_a }}
+                        </button>
+                        <mat-button-toggle [value]="question.opcion_a" mat-raised-button class="color-transparent w-50 toogle-btn"
+                            *ngIf="question.opcion_a && question.multi"> {{ question.opcion_a }}</mat-button-toggle>
+                    </div>
+                    <div class="col-12 col-md-4 mt-2 text-center">
+                        <button mat-raised-button class="color-transparent w-50"
+                            *ngIf="question.opcion_b && !question.multi" (click)="answer(question.id, question.opcion_b)">
+                            {{ question.opcion_b }}
+                        </button>
+                        <mat-button-toggle [value]="question.opcion_b" mat-raised-button class="color-transparent w-50 toogle-btn"
+                            *ngIf="question.opcion_b && question.multi"> {{ question.opcion_b }}</mat-button-toggle>
+                    </div>
+                    <div class="col-12 col-md-4 mt-2 text-center">
+                        <button mat-raised-button class="color-transparent w-50"
+                            *ngIf="question.opcion_c && !question.multi" (click)="answer(question.id, question.opcion_c)">
+                            {{ question.opcion_c }}
+                        </button>
+                        <mat-button-toggle [value]="question.opcion_c" mat-raised-button class="color-transparent w-50 toogle-btn"
+                            *ngIf="question.opcion_c && question.multi"> {{ question.opcion_c }}</mat-button-toggle>
+                    </div>
+                    <div class="col-12 col-md-4 mt-2 text-center">
+                        <button mat-raised-button class="color-transparent w-50"
+                            *ngIf="question.opcion_d && !question.multi" (click)="answer(question.id, question.opcion_d)">
+                            {{ question.opcion_d }}
+                        </button>
+                        <mat-button-toggle [value]="question.opcion_d" mat-raised-button class="color-transparent w-50 toogle-btn"
+                            *ngIf="question.opcion_d && question.multi"> {{ question.opcion_d }}</mat-button-toggle>
+                    </div>
+                    <div class="col-12 col-md-4 mt-2 text-center">
+                        <button mat-raised-button class="color-transparent w-50"
+                            *ngIf="question.opcion_e && !question.multi" (click)="answer(question.id, question.opcion_e)">
+                            {{ question.opcion_e }}
+                        </button>
+                        <mat-button-toggle [value]="question.opcion_e" mat-raised-button class="color-transparent w-50 toogle-btn"
+                            *ngIf="question.opcion_e && question.multi"> {{ question.opcion_e }}</mat-button-toggle>
+                    </div>
+                </div>
+            </div>
+        </mat-button-toggle-group>
+
+        <div class="row pt-5 mt-2" *ngIf="countAnswers.length && question.multi && toggleData?.length && !enviado">
+            <div class="row mt-2">
+                <div class="col-12 col-md-4 mt-2 text-center offset-md-4">
+                    <button mat-raised-button class="color-black w-50" (click)="sendMulti(question.id)">Continuar</button>
+                </div>
+            </div>
+        </div>
+        <div class="row pt-5 mt-2" *ngIf="listQuestions[listQuestions.length - 1]?.id === question?.id && this.countAnswers[this.countAnswers.length - 1]?.respuesta && enviado">
+            <div class="row pt-5 mt-2">
+                <div class="col-12 col-md-4 mt-2 text-center offset-md-4">
+                    <button mat-raised-button class="color-primary w-50" (click)="send()">Enviar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
