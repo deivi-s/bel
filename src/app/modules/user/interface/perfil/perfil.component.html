@@ -1,50 +1,122 @@
 <div class="contenido">
-    <div class="container">
+  <div class="container">
+    <div class="row pt-5">
+      <form [formGroup]="userGroup">
+        <div
+          class="col-md-8 offset-md-2 col-md-2 offset-md-2 col-sm-12 pt-5"
+          id="profile"
+        >
+          <div class="pb-2 text-center">
+            <span class="title-white text-center">Perfil de usuario</span>
+          </div>
 
-        <div class="row pt-5">
+          <div class="p-4 photo">
+            <img
+              [src]="photo ? photo : '/assets/content/perfil.svg'"
+              class="circulo"
+            />
+            <span class="title-white text-center circulo-titulo">
+              <input
+                type="file"
+                #fileInput
+                id="uploadFile"
+                name="uploadFile"
+                multiple="multiple"
+                accept="image/*"
+                (change)="uploadFileEvt($event)"
+                [ngClass]="photo ? 'position-none' : ''"
+              />{{ photo ? "" : fileAttr }}</span
+            >
+          </div>
 
-            <div class="col-md-8 offset-md-2 col-md-2 offset-md-2 col-sm-12 pt-5" id="profile">
-                <div class="pb-2 text-center">
-                    <span class="title-white text-center">Perfil de usuario</span>
-                </div>
-
-                <div class="p-4 photo">
-                    <img src="/assets/content/perfil.svg" alt="" class="circulo">
-                    <span class="title-white text-center circulo-titulo">Foto de perfil</span>
-                  </div>
-                <div class="form-group row pb">
-                    <div class="col-sm-12">
-                        <input type="text" class="form-control ng-pristine " placeholder="Nombre">
-                    </div>
-                </div>
-                <div class="form-group row pb">
-                    <div class="col-sm-12">
-                        <input type="text" class="form-control ng-pristine " placeholder="Apellidos">
-                    </div>
-                </div>
-                <div class="form-group row pb">
-                    <div class="col-sm-12">
-                        <input type="text" class="form-control ng-pristine " placeholder="Email">
-                    </div>
-                </div>
-                <div class="form-group row pb">
-                    <div class="col-sm-12">
-                        <input type="text" class="form-control ng-pristine " placeholder="Número de contacto">
-                    </div>
-                </div>
-                <div class="form-group row pb">
-                    <div class="col-sm-6">
-                        <input type="text" class="form-control ng-pristine " placeholder="País">
-                    </div>
-                    <div class="col-sm-6">
-                        <input type="text" class="form-control ng-pristine " placeholder="Región">
-                    </div>
-                </div>
-
-                <button type="button" mat-raised-button color="warn">
-                    <span>Guardar</span>
-                </button>
+          <div class="form-group row pb">
+            <div class="col-sm-12">
+              <input
+                type="text"
+                class="form-control ng-pristine"
+                placeholder="Nombre"
+                formControlName="nombres"
+                [ngClass]="{
+                  'is-invalid': submited && !userGroup.controls['nombres'].valid
+                }"
+              />
             </div>
+          </div>
+          <div class="form-group row pb">
+            <div class="col-sm-12">
+              <input
+                type="text"
+                class="form-control ng-pristine"
+                placeholder="Apellidos"
+                formControlName="apellidos"
+                [ngClass]="{
+                  'is-invalid':
+                    submited && !userGroup.controls['apellidos'].valid
+                }"
+              />
+            </div>
+          </div>
+          <div class="form-group row pb">
+            <div class="col-sm-12">
+              <input
+                type="text"
+                class="form-control ng-pristine"
+                placeholder="Email"
+                formControlName="email"
+                [ngClass]="{
+                  'is-invalid': submited && !userGroup.controls['email'].valid
+                }"
+              />
+            </div>
+          </div>
+          <div class="form-group row pb">
+            <div class="col-sm-12">
+              <input
+                type="text"
+                class="form-control ng-pristine"
+                placeholder="Número de contacto"
+                formControlName="celular"
+                [ngClass]="{
+                  'is-invalid': submited && !userGroup.controls['celular'].valid
+                }"
+              />
+            </div>
+          </div>
+          <div class="form-group row pb">
+            <div class="col-sm-6">
+              <input
+                type="text"
+                class="form-control ng-pristine"
+                placeholder="País"
+                formControlName="pais"
+                [ngClass]="{
+                  'is-invalid': submited && !userGroup.controls['pais'].valid
+                }"
+              />
+            </div>
+            <div class="col-sm-6">
+              <input
+                type="text"
+                class="form-control ng-pristine"
+                placeholder="Región"
+                formControlName="region"
+                [ngClass]="{
+                  'is-invalid': submited && !userGroup.controls['region'].valid
+                }"
+              />
+            </div>
+          </div>
+
+          <button
+            type="button"
+            mat-raised-button
+            color="warn"
+            (click)="guardar()"
+          >
+            <span>Guardar</span>
+          </button>
         </div>
+      </form>
     </div>
+  </div>
 </div>

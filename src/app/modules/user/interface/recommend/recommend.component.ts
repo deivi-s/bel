@@ -16,6 +16,8 @@ import { UserInfrastructure } from '../../infrastructure/user.infraestructure';
 export class RecommendComponent implements OnInit {
   listCategories: any = [];
   listQuestions: any[] = [];
+  listQuestionsCopy: any[] = [];
+
   countAnswers: any = [];
   question: any;
   preguntaId: number;
@@ -33,19 +35,26 @@ export class RecommendComponent implements OnInit {
   ngOnInit(): void {
     this.questions();
     this.subCategories();
-
-
   }
 
   questions() {
     this.userAdmin.listQuestions().subscribe({
       next: (data: any) => {
         this.listQuestions = data;
+        this.listQuestionsCopy = data;
       },
     });
   }
 
   subCategories() {
+    this.userAdmin.listCategories().subscribe({
+      next: (data: any) => {
+        this.listCategories = data;
+      },
+    });
+  }
+
+  subSubCategories() {
     this.userAdmin.listSubCategories().subscribe({
       next: (data: any) => {
         this.listCategories = data;
@@ -55,6 +64,9 @@ export class RecommendComponent implements OnInit {
 
   mainQuestion(id: number) {
     this.preguntaId = id;
+    this.listQuestions =this.listQuestionsCopy;
+    this.listQuestions = this.listQuestions.filter((data) => data.id_categoria === id);
+
     this.listQuestions.map((data: any) => {
       this.countAnswers.push({
         id_usuario: null,

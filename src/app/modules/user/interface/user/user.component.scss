@@ -1,47 +1,115 @@
 .contenido {
-    background-image: url('/assets/content/img-1.svg');
-    background-repeat: no-repeat;
-    background-size: cover;
-    height: 650px;
+  background-image: url('/assets/content/img-1.svg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 650px;
 
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 h1,
 h3 {
-    font-family: 'Montserrat Bold';
-    color: white;
-    /* text-align: center; */
+  font-family: 'Montserrat Bold';
+  color: white;
+  /* text-align: center; */
 }
 
 h5 {
-    font-family: 'Montserrat Bold';
-    color: black;
-    font-size: 1rem;
+  font-family: 'Poppins Regular';
+  color: black;
+  font-size: 1rem;
 }
 
 .product {
-    background: #FFFFFF;
-    border-radius: 10px;
-    box-shadow: 0px 3px 13px 3px rgba(255, 253, 253, 0.35);
-    height: 330px;
+  background: #FFFFFF;
+  border-radius: 10px;
+  box-shadow: 0px 3px 13px 3px rgba(255, 253, 253, 0.35);
+  height: 330px;
 }
 
 .img {
-    text-align: center !important;
+  text-align: center !important;
 }
 
 .yellow {
-    color: #FFA800;
-    font-family: 'Montserrat Bold';
-    font-size: 2.5rem;
+  color: #FFA800;
+  font-family: 'Montserrat Bold';
+  font-size: 2.5rem;
 }
 
 .span-black {
-    color: black;
-    font-family: 'Montserrat Regular';
-    font-size: 0.8rem;
+  color: black;
+  font-family: 'Montserrat Regular';
+  font-size: 0.8rem;
+}
+
+@media (min-width: 1200px) and (max-width: 1350px) {
+  .p-4 {
+    padding: 1.2rem !important;
+  }
+
+  .yellow {
+    font-size: 2.1rem;
+  }
+
+  .mt-4 {
+    margin-top: 0rem !important;
+  }
+}
+
+@media only screen and (max-width: 770px) {
+
+  .p-4 {
+    padding: 2rem !important;
+  }
+
+  .col-lg-3 {
+    width: 100% !important;
+  }
+
+  .product h5 {
+    font-family: 'Poppins Regular';
+    font-size: 1.5rem !important;
+    text-align: center;
+  }
+
+  .mt-4 {
+    margin-top: 0rem !important;
+  }
+
+  .pt-5 {
+    padding-top: 1.6rem !important;
+  }
+}
+
+.display {
+  display: none;
+}
+
+.form-select {
+  border-radius: 15px;
+  font-family: "Poppins Regular";
+  font-size: 0.87rem !important;
+  padding-left: 1em;
+}
+
+.filter {
+  font-family: 'Montserrat Regular';
+  color: white;
+  padding-top: 7px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+option {
+  background: #19181e;
+  color: white;
+}
+
+select {
+  background: transparent;
+  color: white;
 }
 

@@ -21,7 +21,7 @@ const routes: Routes = [
     component: DetailProductComponent
   },
   {
-    path: 'resume',
+    path: 'questions',
     component: RecommendComponent
   },
   {

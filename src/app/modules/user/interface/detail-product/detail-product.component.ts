@@ -4,6 +4,8 @@ import {
 } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 
+import { LayoutService } from 'src/app/config/services/layout.service';
+
 import { UserInfrastructure } from '../../infrastructure/user.infraestructure';
 
 @Component({
@@ -16,8 +18,9 @@ export class DetailProductComponent implements OnInit {
   porcentaje: number;
   constructor(
     private readonly routerActive: ActivatedRoute,
-    private readonly userAdmin: UserInfrastructure
-  ) {}
+    private readonly userAdmin: UserInfrastructure,
+    private layoutService: LayoutService
+  ) { this.layoutService.configuration = { header: true, menu: true }; }
   product: any;
 
   async ngOnInit() {

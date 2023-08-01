@@ -1,5 +1,12 @@
-import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import {
+  Component,
+  EventEmitter,
+  OnInit,
+  Output,
+} from '@angular/core';
 import { Router } from '@angular/router';
+
+import { LayoutService } from 'src/app/config/services/layout.service';
 
 @Component({
   selector: 'app-header',
@@ -10,7 +17,7 @@ export class HeaderComponent implements OnInit {
 
   @Output() onToggleSidenav: EventEmitter<void> = new EventEmitter<void>();
 
-  constructor( private readonly router: Router) {}
+  constructor( private layoutService: LayoutService, private readonly router: Router) {}
 
   ngOnInit(): void {}
 
@@ -18,8 +25,12 @@ export class HeaderComponent implements OnInit {
     this.onToggleSidenav.emit();
   }
 
-  logout(): void {
-    this.router.navigate([`/`]);
+  logout(): void {/*
+    localStorage.setItem('invitado', 'false');
+
+    this.layoutService.configuration = { header: false, menu: false };
+    this.router.navigate(['/']); */
+
   }
 
 }

@@ -4,6 +4,8 @@ import {
 } from '@angular/core';
 import { Router } from '@angular/router';
 
+import { LayoutService } from 'src/app/config/services/layout.service';
+
 import { UserInfrastructure } from '../../infrastructure/user.infraestructure';
 
 @Component({
@@ -19,45 +21,70 @@ export class UserComponent implements OnInit {
   porcentajeTotal: any[] = [];
   pro: any[] = [];
   invitado = false;
+  filterProduct = false;
+  listSubCategories: any[] = [];
+
 
   constructor(
     private readonly router: Router,
-    private readonly userAdmin: UserInfrastructure
-  ) {}
+    private readonly userAdmin: UserInfrastructure,
+    private layoutService: LayoutService
+  ) {
+    this.layoutService.configuration = { header: true, menu: true };
+  }
 
   async ngOnInit() {
     this.allProducts = await this.listProducts();
     this.pro = this.allProducts;
-    this.invitado = Boolean( JSON.parse(localStorage.getItem('invitado') || ''));
+
+    try {
+      this.invitado = Boolean(
+        JSON.parse(localStorage.getItem('invitado') || '')
+      );
+      this.subCategories();
+    } catch (e) {
+      this.invitado = false;
+    }
   }
 
-  /* async ngDoCheck() {
-    try {
-      const invitado = JSON.parse(localStorage.getItem('invitado') || '');
+  subCategories() {
+    this.userAdmin.listSubCategories().subscribe({
+      next: (data: any) => {
+        this.listSubCategories = data;
+      },
+    });
+  }
 
-      if (invitado) {
-        const pros = this.allProductsFilter.filter((aa) => aa.porcentaje <= 70);
-        this.allProducts = pros;
-      } else {
-        this.allProducts = this.allProductsFilter;
-      }
-    } catch (error) {
-      this.allProducts = this.allProductsFilter;
-    }
-  } */
 
   async filter(idCategoria?: number) {
-    this.pro = idCategoria ? this.allProducts.filter((product) => product.id_sub_categoria === idCategoria ) : this.allProducts;
+    this.pro = idCategoria
+      ? this.allProducts.filter(
+          (product) => product.id_categoria === idCategoria
+        )
+      : this.allProducts;
+
+    if (idCategoria === 0) {
+      this.filterProduct = false;
+      return;
+    }
+    this.filterProduct = true;
+  }
+
+  async filterSelect(idSubCategoria?: any){
+    const id = Number(idSubCategoria.target.value);
+    this.pro = id ? this.allProducts.filter((product) => product.id_sub_categoria === Number(id)) : this.allProducts;
+
+    if (id === 0 || id === null) {
+      this.filterProduct = false;
+      return;
+    }
+
+    this.filterProduct = true;
+
   }
 
   async listProducts(idCategoria?: number) {
     this.listAnswersStorage = JSON.parse(localStorage.getItem('market') || '');
-    /*   const invitado = JSON.parse(localStorage.getItem('invitado') || ''); */
-    let totalPreguntas = 0;
-
-    /* this.listAnswersStorage.map((data) => {
-      totalPreguntas += data?.respuesta?.length
-    }); */
 
     return new Promise<any>((resolve, reject) => {
       const productsMap: any[] = [];
@@ -128,15 +155,6 @@ export class UserComponent implements OnInit {
 
       resolve(productsMap);
     });
-  }
-
-  filterProduct(porcentaje: any) {
-    const invitado = JSON.parse(localStorage.getItem('invitado') || '');
-
-    if (porcentaje >= 70 && invitado) {
-      return true;
-    }
-    return;
   }
 
   detail(id: number, procentaje: number) {

@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+
 import { ILayout } from './config/interfaces/layout.interface';
 import { LayoutService } from './config/services/layout.service';
 
@@ -14,7 +15,7 @@ export class AppComponent {
 
   configLayout !: ILayout;
   isMenuShow: boolean = true;
-  
+
   constructor(private layoutService: LayoutService) {
     layoutService.configuration.subscribe((config: ILayout) => {
       this.configLayout = config;

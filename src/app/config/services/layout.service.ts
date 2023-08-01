@@ -1,5 +1,10 @@
-import { Inject, Injectable } from '@angular/core';
+import {
+  Inject,
+  Injectable,
+} from '@angular/core';
+
 import { BehaviorSubject } from 'rxjs';
+
 import { ILayout } from '../interfaces/layout.interface';
 import { LAYOUT_TOKEN } from '../tokens/layout.token';
 
@@ -8,6 +13,9 @@ import { LAYOUT_TOKEN } from '../tokens/layout.token';
 })
 export class LayoutService {
   private readonly configBehaviorSubject !: BehaviorSubject<ILayout>;
+  userData = new BehaviorSubject<any>(null);
+
+
   constructor(@Inject(LAYOUT_TOKEN) private layout: ILayout) {
     this.configBehaviorSubject = new BehaviorSubject<ILayout>(layout);
   }

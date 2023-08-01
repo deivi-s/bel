@@ -1,26 +1,87 @@
 <div class="contenido">
-  <h1>Mis recomendaciones para tí {{ pro.length }} </h1>
+  <h1>Mis recomendaciones para tí</h1>
   <span></span>
 </div>
 
 <app-container>
   <div class="row pt-3">
-    <div class="col-md-3 col-sm-6 mt-2"><button mat-raised-button class="color-primary w-100" (click)="filter()">Todos</button></div>
-    <div class="col-md-3 col-sm-6 mt-2"><button mat-raised-button class="color-secondary w-100" (click)="filter(1)">Cabello</button></div>
-    <div class="col-md-3 col-sm-6 mt-2"><button mat-raised-button class="color-secondary w-100" (click)="filter(2)">Rostro</button>
+    <div class="col-md-3 col-sm-6 mt-2">
+      <button mat-raised-button class="color-primary w-100" (click)="filter(0)">
+        Todos
+      </button>
     </div>
-    <div class="col-md-3 col-sm-6 mt-2"><button mat-raised-button class="color-secondary w-100" (click)="filter(3)">Piel</button>
+    <div class="col-md-3 col-sm-6 mt-2">
+      <button mat-raised-button class="color-secondary w-100" (click)="filter(1)">
+        Cabello
+      </button>
+    </div>
+    <div class="col-md-3 col-sm-6 mt-2">
+      <button mat-raised-button class="color-secondary w-100" (click)="filter(2)">
+        Rostro
+      </button>
+    </div>
+    <div class="col-md-3 col-sm-6 mt-2">
+      <button mat-raised-button class="color-secondary w-100" (click)="filter(3)">
+        Piel
+      </button>
     </div>
 
-    <div class="d-flex pt-5 mt-5 pb-5">
-      <h3>Ceras para el cabello</h3>
+    <div class="offset-md-3 col-md-3 col-sm-12 mt-4">
+      <span class="filter">Filtrar por categoria :</span>
+    </div>
+    <div class="col-md-3 col-sm-12 mt-4 select-box">
+     <!--  <mat-form-field appearance="fill" class="p-2 first">
+          <mat-label>Filtrar por sub categoria</mat-label>
+          <mat-select matNativeControl (ngModelChange)="filterSelect($event)">
+              <mat-option [value]="0">Todos</mat-option>
+              <mat-option *ngFor="let subCategories of listSubCategories" [value]="subCategories.id">{{subCategories.nombre}}</mat-option>
+          </mat-select>
+      </mat-form-field> -->
+
+      <select class="form-select" (change)="filterSelect($event)">
+        <option selected (click)="filterSelect(0)">Todas</option>
+        <option *ngFor="let subCategories of listSubCategories" [value]="subCategories.id" >{{subCategories.nombre}}</option>
+      </select>
+    </div>
+    <div class="col-md-3 col-sm-12 mt-2">
+
+    </div>
+    <div class="d-flex pt-5 mt-5 pb-5" *ngIf="filterProduct">
+      <h3>Productos encontrados:</h3>
     </div>
 
-    <div class="row d-flex justify-content-center row-cols-5" *ngIf="allProducts.length && !pro.length">
-      <div class="col-lg-3 col-md-6 mt-3 col-xl-2" (click)="detail(producto.id, producto.porcentaje)" *ngFor="let producto of allProducts">
-        <div class="product p-4">
+    <div class="row d-flex justify-content-center row-cols-5" *ngIf="pro.length && filterProduct">
+      <div class="col-lg-3 col-md-6 mt-3 col-xl-2" (click)="detail(producto.id, producto.porcentaje)"
+        *ngFor="let producto of pro">
+        <div class="product p-4" *ngIf="invitado && producto.porcentaje <= 70">
           <div class="img">
-            <img [src]="producto.foto" width="180" class="img-fluid">
+            <img [src]="producto.foto" width="180" class="img-fluid" />
+          </div>
+          <div class="pt-0 pb-0 mb-0">
+            <h5 class="mb-0">{{ producto.nombre }}</h5>
+          </div>
+          <div class="pt-0 pb-0 d-flex flex-column">
+            <h1 class="yellow mb-0">{{ producto.porcentaje }} %</h1>
+            <span class="span-black">Recomedado para ti</span>
+          </div>
+        </div>
+
+        <div class="product p-4" *ngIf="invitado && producto.porcentaje >= 70">
+          <div class="pt-0 pb-0 mb-0">
+            <h5 class="mb-0 pt-5 pb-4">Crea tu cuenta para visualizar</h5>
+          </div>
+          <button mat-raised-button class="color-primary w-100" routerLink>
+            Crear
+          </button>
+          <div class="pt-4 mt-4 pb-0 d-flex flex-column">
+            <h1 class="yellow mb-0">{{ producto.porcentaje }} %</h1>
+            <span class="span-black">Recomedado para ti</span>
+          </div>
+        </div>
+
+        <div class="product p-4" *ngIf="!invitado">
+          <div class="img">
+            <img [src]="producto.foto" width="180" class="img-fluid" />
           </div>
           <div class="pt-0 pb-0 mb-0">
             <h5 class="mb-0">{{ producto.nombre }}</h5>
@@ -33,24 +94,58 @@
       </div>
     </div>
 
-    <div class="row d-flex justify-content-center row-cols-5" *ngIf="pro.length">
-      <div class="col-lg-3 col-md-6 mt-3 col-xl-2" (click)="detail(producto.id, producto.porcentaje)" *ngFor="let producto of pro">
-        <div class="product p-4">
-          <div class="img">
-            <img [src]="producto.foto" width="180" class="img-fluid">
-          </div>
-          <div class="pt-0 pb-0 mb-0">
-            <h5 class="mb-0">{{ producto.nombre }}</h5>
-          </div>
-          <div class="pt-0 pb-0 d-flex flex-column">
-            <h1 class="yellow mb-0">{{ producto.porcentaje }} %</h1>
-            <span class="span-black">Recomedado para ti</span>
+    <div *ngIf="!filterProduct">
+
+      <div *ngFor="let subCategoria of listSubCategories">
+        <div class="d-flex pt-5 pb-5">
+          <h3>{{ subCategoria.nombre }}</h3>
+        </div>
+        <div class="row d-flex justify-content-center row-cols-5" *ngIf="pro.length">
+          <div class="col-lg-3 col-md-6 mt-3 col-xl-2" (click)="detail(producto.id, producto.porcentaje)"
+            *ngFor="let producto of pro" [ngClass]=" producto.id_sub_categoria !== subCategoria.id ? 'display': ''">
+            <ng-container *ngIf="producto.id_sub_categoria === subCategoria.id" >
+              <div class="product p-4" *ngIf="invitado && producto.porcentaje <= 70">
+                <div class="img">
+                  <img [src]="producto.foto" width="180" class="img-fluid" />
+                </div>
+                <div class="pt-0 pb-0 mb-0">
+                  <h5 class="mb-0">{{ producto.nombre }}</h5>
+                </div>
+                <div class="pt-0 pb-0 d-flex flex-column">
+                  <h1 class="yellow mb-0">{{ producto.porcentaje }} %</h1>
+                  <span class="span-black">Recomedado para ti</span>
+                </div>
+              </div>
+
+              <div class="product p-4" *ngIf="invitado && producto.porcentaje >= 70">
+                <div class="pt-0 pb-0 mb-0">
+                  <h5 class="mb-0 pt-5 pb-4">Crea tu cuenta para visualizar</h5>
+                </div>
+                <button mat-raised-button class="color-primary w-100" routerLink>
+                  Crear
+                </button>
+                <div class="pt-4 mt-4 pb-0 d-flex flex-column">
+                  <h1 class="yellow mb-0">{{ producto.porcentaje }} %</h1>
+                  <span class="span-black">Recomedado para ti</span>
+                </div>
+              </div>
+
+              <div class="product p-4" *ngIf="!invitado">
+                <div class="img">
+                  <img [src]="producto.foto" width="180" class="img-fluid" />
+                </div>
+                <div class="pt-0 pb-0 mb-0">
+                  <h5 class="mb-0">{{ producto.nombre }}</h5>
+                </div>
+                <div class="pt-0 pb-0 d-flex flex-column">
+                  <h1 class="yellow mb-0">{{ producto.porcentaje }} %</h1>
+                  <span class="span-black">Recomedado para ti</span>
+                </div>
+              </div>
+            </ng-container>
           </div>
         </div>
       </div>
     </div>
   </div>
-
-
-
 </app-container>

@@ -5,7 +5,7 @@
     </button>
   </mat-list-item>
   <mat-list-item class="menu" routerLinkActive="activeLink">
-    <a routerLink="/recommendation/resume">
+    <a routerLink="/resume/questions">
       <button mat-button disableRipple>
         <div class="menu-content">
           <img src="assets/menu/recomendacion.svg" class="icon" />
@@ -15,7 +15,7 @@
       </button>
     </a>
   </mat-list-item>
-  <mat-list-item class="menu" routerLinkActive="activeLink">
+  <mat-list-item class="menu" routerLinkActive="activeLink" *ngIf="resume.length">
     <a routerLink="/recommendation">
       <button mat-button disableRipple>
         <div class="menu-content">
@@ -27,7 +27,7 @@
     </a>
   </mat-list-item>
 
-  <mat-list-item class="menu" routerLinkActive="activeLink">
+  <mat-list-item class="menu" routerLinkActive="activeLink" *ngIf="id !== 0">
     <a routerLink="/profile/user">
       <button mat-button disableRipple>
         <div class="menu-content">

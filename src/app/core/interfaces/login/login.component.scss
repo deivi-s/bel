@@ -120,3 +120,10 @@ button {
 hr {
     color: #909090;
 }
+
+.transparent{
+  display: flex !important;
+  justify-content: space-around !important;
+  box-shadow: none !important;
+  border:none;
+}

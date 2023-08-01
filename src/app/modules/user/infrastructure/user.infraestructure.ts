@@ -31,6 +31,11 @@ export class UserInfrastructure
     return this.http.get<any>(`${environment.apiPath}/productos/preguntas`);
   }
 
+  listCategories(): Observable<any> {
+    return this.http.get<any>(`${environment.apiPath}/productos/categorias`);
+  }
+
+
   listSubCategories(): Observable<any> {
     return this.http.get<any>(`${environment.apiPath}/productos/subcategorias`);
   }
@@ -50,5 +55,22 @@ export class UserInfrastructure
   productDetailtById(id: number): Observable<any> {
     return this.http.get<any>(`${environment.apiPath}/productos/${id}`);
   }
+
+  userRegister(user: any): Observable<any> {
+    return this.http.post<any>(`${environment.apiPath}/usuarios/register`, user);
+  }
+
+  login(user: any): Observable<any> {
+    return this.http.post<any>(`${environment.apiPath}/usuarios/login`, user);
+  }
+
+  getUser(id: number): Observable<any> {
+    return this.http.get<any>(`${environment.apiPath}/usuarios/${id}`);
+  }
+
+  updateUser(user: any): Observable<any> {
+    return this.http.post<any>(`${environment.apiPath}/usuarios/actualizar`, user);
+  }
+
 
 }
