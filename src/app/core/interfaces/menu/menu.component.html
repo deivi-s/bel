@@ -26,6 +26,28 @@
       </button>
     </a>
   </mat-list-item>
+  <mat-list-item class="menu" routerLinkActive="activeLink">
+    <a routerLink="/markets">
+      <button mat-button disableRipple>
+        <div class="menu-content">
+          <img src="assets/menu/recomendacion.svg" class="icon" />
+          <span class="menu-span">Tiendas</span>
+          <img src="assets/menu/arrow.svg" class="arrow" />
+        </div>
+      </button>
+    </a>
+  </mat-list-item>
+  <mat-list-item class="menu" routerLinkActive="activeLink">
+    <a routerLink="/products">
+      <button mat-button disableRipple>
+        <div class="menu-content">
+          <img src="assets/menu/recomendacion.svg" class="icon" />
+          <span class="menu-span">Productos</span>
+          <img src="assets/menu/arrow.svg" class="arrow" />
+        </div>
+      </button>
+    </a>
+  </mat-list-item>
 
   <mat-list-item class="menu" routerLinkActive="activeLink" *ngIf="id !== 0">
     <a routerLink="/profile/user">

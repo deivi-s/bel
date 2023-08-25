@@ -51,9 +51,9 @@
     </div>
 
     <div class="row d-flex justify-content-center row-cols-5" *ngIf="pro.length && filterProduct">
-      <div class="col-lg-3 col-md-6 mt-3 col-xl-2" (click)="detail(producto.id, producto.porcentaje)"
+      <div class="col-lg-3 col-md-6 mt-3 col-xl-2"
         *ngFor="let producto of pro">
-        <div class="product p-4" *ngIf="invitado && producto.porcentaje <= 70">
+        <div class="product p-4" *ngIf="invitado && producto.porcentaje <= 70" (click)="detail(producto.id, producto.porcentaje)">
           <div class="img">
             <img [src]="producto.foto" width="180" class="img-fluid" />
           </div>
@@ -79,7 +79,7 @@
           </div>
         </div>
 
-        <div class="product p-4" *ngIf="!invitado">
+        <div class="product p-4" *ngIf="!invitado" (click)="detail(producto.id, producto.porcentaje)">
           <div class="img">
             <img [src]="producto.foto" width="180" class="img-fluid" />
           </div>
@@ -101,7 +101,7 @@
           <h3>{{ subCategoria.nombre }}</h3>
         </div>
         <div class="row d-flex justify-content-center row-cols-5" *ngIf="pro.length">
-          <div class="col-lg-3 col-md-6 mt-3 col-xl-2" (click)="detail(producto.id, producto.porcentaje)"
+          <div class="col-lg-3 col-md-6 mt-3 col-xl-2"
             *ngFor="let producto of pro" [ngClass]=" producto.id_sub_categoria !== subCategoria.id ? 'display': ''">
             <ng-container *ngIf="producto.id_sub_categoria === subCategoria.id" >
               <div class="product p-4" *ngIf="invitado && producto.porcentaje <= 70">
@@ -130,7 +130,7 @@
                 </div>
               </div>
 
-              <div class="product p-4" *ngIf="!invitado">
+              <div class="product p-4" *ngIf="!invitado" (click)="detail(producto.id, producto.porcentaje)">
                 <div class="img">
                   <img [src]="producto.foto" width="180" class="img-fluid" />
                 </div>

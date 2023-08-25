@@ -44,6 +44,7 @@ export class UserComponent implements OnInit {
       this.subCategories();
     } catch (e) {
       this.invitado = false;
+      this.subCategories();
     }
   }
 
@@ -89,8 +90,10 @@ export class UserComponent implements OnInit {
     return new Promise<any>((resolve, reject) => {
       const productsMap: any[] = [];
       this.userAdmin.listProducts().subscribe((data: any[]) => {
+
         data.map((product) => {
           let porcentajeSubTotal: any[] = [];
+          let ponderacionSubTotal: any[] = [];
 
           this.listAnswersStorage.map((questionStorage: any) => {
             this.userAdmin
@@ -108,42 +111,49 @@ export class UserComponent implements OnInit {
                           pregunta?.opcion_a === respuesta &&
                           res[0]?.opcion_a
                         ) {
-                          porcentajeSubTotal.push(res[0]?.opcion_a);
+                          porcentajeSubTotal.push(res[0]?.opcion_a * res[0]?.ponderacion);
+                          ponderacionSubTotal.push(Number(res[0]?.ponderacion));
                         }
                         if (
                           pregunta?.opcion_b === respuesta &&
                           res[0]?.opcion_b
                         ) {
-                          porcentajeSubTotal.push(res[0]?.opcion_b);
+                          porcentajeSubTotal.push(res[0]?.opcion_b * res[0]?.ponderacion);
+                          ponderacionSubTotal.push(Number(res[0]?.ponderacion));
                         }
                         if (
                           pregunta?.opcion_c === respuesta &&
                           res[0]?.opcion_c
                         ) {
-                          porcentajeSubTotal.push(res[0]?.opcion_c);
+                          porcentajeSubTotal.push(res[0]?.opcion_c * res[0]?.ponderacion);
+                          ponderacionSubTotal.push(Number(res[0]?.ponderacion));
                         }
                         if (
                           pregunta?.opcion_d === respuesta &&
                           res[0]?.opcion_d
                         ) {
-                          porcentajeSubTotal.push(res[0]?.opcion_d);
+                          porcentajeSubTotal.push(res[0]?.opcion_d * res[0]?.ponderacion);
+                          ponderacionSubTotal.push(Number(res[0]?.ponderacion));
                         }
                         if (
                           pregunta?.opcion_e === respuesta &&
                           res[0]?.opcion_e
                         ) {
-                          porcentajeSubTotal.push(res[0]?.opcion_e);
+                          porcentajeSubTotal.push(res[0]?.opcion_e * res[0]?.ponderacion);
+                          ponderacionSubTotal.push(Number(res[0]?.ponderacion));
                         }
+
                       }
                     );
                     const initial = 0;
-                    const sum = porcentajeSubTotal.reduce(
-                      (accumulator, currentValue) => accumulator + currentValue,
-                      initial
-                    );
-                    const porcentaje = Math.round(
-                      sum / porcentajeSubTotal?.length
-                    );
+                    const initialPonderacion = 0;
+                    const sum = porcentajeSubTotal.reduce((accumulator, currentValue) => accumulator + currentValue,initial);
+                    const sumPonderacion = ponderacionSubTotal.reduce((accumulator, currentValue) => accumulator + currentValue,initialPonderacion);
+
+                    let porcentaje = 0;
+
+                    porcentaje = Math.round(sum / porcentajeSubTotal?.length);
+
                     product.porcentaje = porcentaje;
                   });
               });

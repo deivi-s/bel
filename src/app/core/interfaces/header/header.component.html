@@ -3,12 +3,12 @@
     <img src="assets/icon-menu/menu.svg" class="menu" />
   </button>
   <button mat-button class="profile" [matMenuTriggerFor]="menu">
-    <img src="assets/icon-menu/avatar.svg" />
-    <span>Iniciar Sesión</span>
+    <img [src]="avatar" />
+    <span>{{ nombres }}</span>
   </button>
 </mat-toolbar>
 <mat-menu #menu="matMenu">
-  <button mat-menu-item routerLink="/">
+  <button mat-menu-item routerLink="/" (click)="logout()">
     <mat-icon>logout</mat-icon>
     Cerrar sesión
   </button>

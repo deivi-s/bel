@@ -43,6 +43,7 @@ export class LoginComponent implements OnInit, AfterViewInit {
     private _ngZone: NgZone,
   ) {
     this.layoutService.configuration = { header: false, menu: false };
+
   }
 
   ngAfterViewInit(): void {
@@ -51,6 +52,7 @@ export class LoginComponent implements OnInit, AfterViewInit {
 
   ngOnInit(): void {
     this.loadForm();
+    this.googleForm();
   }
 
   googleForm() {
@@ -97,9 +99,12 @@ export class LoginComponent implements OnInit, AfterViewInit {
 
       this.user.login(this.formularioLogin.value).subscribe({
         next: (res) => {
+
           if (res.status === true) {
             this.layoutService.userData.next(res.id);
             localStorage.setItem('id', res.id);
+            localStorage.setItem('nombres', data.name);
+            localStorage.setItem('avatar', (data.picture ?? ''))
             this._ngZone.run(() => {
               this.router.navigate([`/resume/questions`]);
           });
@@ -109,7 +114,8 @@ export class LoginComponent implements OnInit, AfterViewInit {
           } else {
             this.user.userRegister(user).subscribe({
               next: (res) => {
-
+                localStorage.setItem('nombres', data.name)
+                localStorage.setItem('avatar', (data.picture ?? ''))
                 this.layoutService.userData.next(res.id);
                 localStorage.setItem('id', res.id);
                 this._ngZone.run(() => {
@@ -199,6 +205,9 @@ export class LoginComponent implements OnInit, AfterViewInit {
       this.user.login(this.formularioLogin.value).subscribe({
         next: (res) => {
           if (res.status === true) {
+            const apellidos =  res.user?.apellidos;
+            localStorage.setItem('nombres', res.user?.nombres + ' ' + (apellidos ??''));
+            localStorage.setItem('avatar', (res.user?.foto ?? ''))
             this.layoutService.userData.next(res.id);
             localStorage.setItem('id', res.id);
             this.router.navigate([`/resume/questions`]);

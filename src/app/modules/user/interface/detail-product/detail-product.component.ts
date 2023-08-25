@@ -32,7 +32,6 @@ export class DetailProductComponent implements OnInit {
   }
 
   async details(id: number) {
-    console.log('asdsa', id);
     await this.userAdmin
       .productDetailtById(id)
       .subscribe(async (detail: any) => {

@@ -8,8 +8,12 @@ mat-toolbar {
 
 .profile img {
   width: 100%;
-  max-width: 40px;
   margin-right: 10px;
+  height: 38px;
+  width: 38px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
 }
 
 .menu {

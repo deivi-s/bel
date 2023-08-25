@@ -50,3 +50,32 @@ button {
 .white {
   color: white;
 }
+
+.store {
+  background: #272727;
+  border-radius: 7px;
+}
+
+.span-store{
+  font-size: 13px;
+  padding-left: 20px;
+}
+
+.store img{
+  border-radius: 7px;
+}
+
+.link-store{
+  color:#FFA800;
+  font-weight: bold;
+}
+
+.store span{
+  text-align: left;
+  padding-bottom: 6px;
+  font-family: "Montserrat Bold";
+}
+
+.description-store{
+  font-family: "Montserrat Regular" !important;
+}

@@ -57,10 +57,9 @@ export class PerfilComponent implements OnInit {
         this.userDataProfile?.celular,
         Validators.required
       ),
-      pais: new FormControl(this.userDataProfile?.pais, Validators.required),
+      pais: new FormControl(this.userDataProfile?.pais),
       region: new FormControl(
-        this.userDataProfile?.region,
-        Validators.required
+        this.userDataProfile?.region
       ),
       foto: new FormControl(this.userDataProfile?.foto),
     });
@@ -102,8 +101,9 @@ export class PerfilComponent implements OnInit {
   }
 
   guardar() {
+
     this.submited = true;
-    this.userGroup.value.foto =  this.photo ? this.photo : this.userGroup.value.foto;
+    this.userGroup.value.foto =  this.photo ?  this.photo : this.userGroup.value.foto;
     if (!this.userGroup.valid) {
       return;
     }

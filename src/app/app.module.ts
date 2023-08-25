@@ -35,6 +35,11 @@ const routes: Routes = [
       import('./modules/user/user.module').then((m) => m.UserModule),
   },
   {
+    path: 'administrator',
+    loadChildren: () =>
+      import('./modules/user/user.module').then((m) => m.UserModule),
+  },
+  {
     path: '',
     component: LoginComponent,
   },
