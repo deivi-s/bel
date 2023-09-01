@@ -1,3 +1,103 @@
-<p>
-  market works!
-</p>
+<div class="contenido">
+  <h1>Tiendas Belzebu</h1>
+  <span></span>
+</div>
+
+<app-container>
+
+  <div class="col-12">
+    <div class="row">
+      <div class="col-lg-9 col-xs-12 pt-2">
+        <input type="text" class="form-control search" placeholder="Buscar tienda...">
+      </div>
+      <div class="col-lg-3 col-xs-12 pt-2">
+        <button mat-raised-button class="color-primary w-100" (click)="openDialog()">
+          Crear tienda
+        </button>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="row pt-3">
+
+
+
+    <div class="col-md-3 col-sm-12 mt-2">
+
+    </div>
+
+
+    <div class="row d-flex justify-content-center row-cols-5" >
+      <div class="col-lg-3 col-md-6 mt-3 col-xl-2" (click)="edit()">
+        <div class="product p-3" >
+          <div class="img">
+            <img [src]="'/assets/products/market-01.png'" width="180" height="180" class="img-fluid" />
+          </div>
+          <div class="pt-3 pb-0 mb-0">
+            <h5 class="mb-0">BarberShop</h5>
+
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-3 col-md-6 mt-3 col-xl-2">
+        <div class="product p-3" >
+          <div class="img">
+            <img [src]="'/assets/products/market-02.png'" width="180" height="180" class="img-fluid" />
+          </div>
+          <div class="pt-3 pb-0 mb-0">
+            <h5 class="mb-0">The Gentleman BarberShop</h5>
+
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-3 col-md-6 mt-3 col-xl-2">
+        <div class="product p-3" >
+          <div class="img">
+            <img [src]="'/assets/products/market-01.png'" width="180" height="180" class="img-fluid" />
+          </div>
+          <div class="pt-3 pb-0 mb-0">
+            <h5 class="mb-0">BarberShop</h5>
+
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-3 col-md-6 mt-3 col-xl-2">
+        <div class="product p-3" >
+          <div class="img">
+            <img [src]="'/assets/products/pro-2.jpg'" width="180" height="180" class="img-fluid" />
+          </div>
+          <div class="pt-3 pb-0 mb-0">
+            <h5 class="mb-0">BarberShop</h5>
+
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-3 col-md-6 mt-3 col-xl-2">
+        <div class="product p-3" >
+          <div class="img">
+            <img [src]="'/assets/products/pro-2.jpg'" width="180" height="180" class="img-fluid" />
+          </div>
+          <div class="pt-3 pb-0 mb-0">
+            <h5 class="mb-0">BarberShop</h5>
+
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-3 col-md-6 mt-3 col-xl-2">
+        <div class="product p-3" >
+          <div class="img">
+            <img [src]="'/assets/products/pro-2.jpg'" width="180" height="180" class="img-fluid" />
+          </div>
+          <div class="pt-3 pb-0 mb-0">
+            <h5 class="mb-0">BarberShop</h5>
+
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+
+  </div>
+</app-container>

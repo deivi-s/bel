@@ -1,0 +1,45 @@
+h1 {
+  font-family: "Montserrat Bold";
+  color: white;
+  font-size: 1.2rem;
+  padding-bottom: 1.2rem;
+}
+
+input,
+label,
+textarea {
+  font-family: "Montserrat Bold";
+  color: white;
+  font-size: 0.8rem;
+}
+
+.form-control:focus {
+  color: #36353C;
+  background-color: #fff;
+  border-color: white;
+  outline: 0;
+  box-shadow: 0 0 0 0.25rem rgb(205 205 205 / 25%);
+}
+
+.row{
+  background: #25242C;
+}
+
+input, textarea{
+  font-family: "Montserrat Regular";
+  background: #36353C;
+  border-color: #36353C;
+  color: #989898;
+}
+
+ngx-awesome-uploader{
+  display: contents;
+}
+
+
+.uploader-wrapper {
+  width: 100% !important;
+
+}
+
+

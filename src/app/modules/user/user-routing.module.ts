@@ -5,8 +5,14 @@ import {
 } from '@angular/router';
 
 import {
+  CreateProductComponent,
+} from './interface/create-product/create-product.component';
+import {
   DetailProductComponent,
 } from './interface/detail-product/detail-product.component';
+import {
+  MarketEditComponent,
+} from './interface/market-edit/market-edit.component';
 import { MarketComponent } from './interface/market/market.component';
 import { PerfilComponent } from './interface/perfil/perfil.component';
 import { ProductComponent } from './interface/product/product.component';
@@ -37,6 +43,14 @@ const routes: Routes = [
   {
     path: 'products',
     component: ProductComponent
+  },
+  {
+    path: 'market/edit/:id',
+    component: MarketEditComponent
+  },
+  {
+    path: 'product/create',
+    component: CreateProductComponent
   }
 
 ];

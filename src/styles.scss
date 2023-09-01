@@ -96,7 +96,7 @@ button .mat-button-wrapper {
 }
 
 
-.color-black .mat-button-wrapper{
+.color-black .mat-button-wrapper {
   color: black !important;
 }
 
@@ -184,6 +184,7 @@ button {
     max-width: 1300px !important;
   }
 }
+
 .detail span {
   font-size: 1.35rem;
   padding: 11px;
@@ -203,12 +204,12 @@ button {
   }
 }
 
-.mat-warn{
+/* .mat-warn {
   background: #D45401 !important;
   font-family: "Poppins Bold";
-}
+} */
 
-mat-button-toggle button{
+mat-button-toggle button {
   width: 50% !important;
   font-size: 1rem !important;
 }
@@ -304,4 +305,102 @@ mat-button-toggle button{
 
 .mat-select-value {
   color: #60D2A7 !important;
+}
+
+.file-drop-wrapper {
+  background: #25242c !important;
+}
+
+.edit-market .file-drop-wrapper {
+  background: white !important;
+}
+
+file-drop {
+  padding-right: 0px !important;
+  padding-left: 0px !important;
+}
+
+.custom-drag {
+  max-width: 100% !important;
+  border-radius: 1px solid white !important;
+  background: #25242c !important;
+}
+
+.edit-market .custom-drag {
+  max-width: 100% !important;
+  border-radius: 1px solid white !important;
+  background: #ffffff !important;
+}
+
+.dropzoneTemplate p {
+  font-family: 'Montserrat Regular' !important;
+  color: white;
+}
+
+.dropzoneTemplate {
+  text-align: center !important;
+}
+
+file-preview-item {
+  max-width: 100% !important;
+  border: 2px dashed #ecf0f1 !important;
+  border-radius: 6px !important;
+  background: #25242c !important;
+  margin-top: 20px !important;
+}
+
+file-preview-item a {
+  background: #25242c !important;
+}
+
+file-preview-item p {
+  font-family: 'Montserrat Regular' !important;
+  color: white;
+  font-size: 0.8rem;
+}
+
+file-preview-container {
+  background: none !important;
+}
+
+.file-upload-error-wrapper {
+  background: #25242c !important;
+}
+
+file-preview-item div {
+  background: #25242c !important;
+}
+
+.edit-market .file-upload-error-wrapper {
+  background: white !important;
+}
+
+.edit-market file-preview-item div {
+  background: white !important;
+}
+
+.edit-market file-preview-item p {
+  font-family: 'Montserrat Regular' !important;
+  color: black;
+  font-size: 0.8rem;
+}
+
+.edit-market file-preview-item {
+  max-width: 100% !important;
+  border: 2px dashed #ecf0f1 !important;
+  border-radius: 6px !important;
+  background: white !important;
+  margin-top: 20px !important;
+}
+
+.edit-market file-preview-item a {
+  background: white !important;
+}
+
+.edit-market .file-upload-error-wrapper {
+  background: white !important;
+}
+
+.edit-market file-preview-item div {
+  background: white !important;
 }

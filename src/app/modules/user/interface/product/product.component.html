@@ -1,3 +1,122 @@
-<p>
-  product works!
-</p>
+<div class="contenido">
+  <h1>Productos</h1>
+  <span></span>
+</div>
+
+<app-container>
+
+  <div class="col-12">
+    <div class="row">
+      <div class="col-lg-9 col-xs-12 pt-2">
+        <input type="text" class="form-control search" placeholder="Buscar producto...">
+      </div>
+      <div class="col-lg-3 col-xs-12 pt-2">
+        <button mat-raised-button class="color-primary w-100" (click)="create()">
+          Crear producto
+        </button>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="row pt-3">
+    <div class="col-md-3 col-sm-6 mt-2">
+      <button mat-raised-button class="color-primary w-100">
+        Todos
+      </button>
+    </div>
+    <div class="col-md-3 col-sm-6 mt-2">
+      <button mat-raised-button class="color-secondary w-100">
+        Cabello
+      </button>
+    </div>
+    <div class="col-md-3 col-sm-6 mt-2">
+      <button mat-raised-button class="color-secondary w-100">
+        Rostro
+      </button>
+    </div>
+    <div class="col-md-3 col-sm-6 mt-2">
+      <button mat-raised-button class="color-secondary w-100">
+        Piel
+      </button>
+    </div>
+
+
+    <div class="col-md-3 col-sm-12 mt-2">
+
+    </div>
+
+
+    <div class="row d-flex justify-content-center row-cols-5" >
+      <div class="col-lg-3 col-md-6 mt-3 col-xl-2">
+        <div class="product p-3" >
+          <div class="img">
+            <img [src]="'/assets/products/pro-2.jpg'" width="180" height="180" class="img-fluid" />
+          </div>
+          <div class="pt-3 pb-0 mb-0">
+            <h5 class="mb-0">Oleo Reparador</h5>
+            <h4 class="mb-0">lúmina</h4>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-3 col-md-6 mt-3 col-xl-2">
+        <div class="product p-3" >
+          <div class="img">
+            <img [src]="'/assets/products/pro-2.jpg'" width="180" height="180" class="img-fluid" />
+          </div>
+          <div class="pt-3 pb-0 mb-0">
+            <h5 class="mb-0">Oleo Reparador</h5>
+            <h4 class="mb-0">lúmina</h4>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-3 col-md-6 mt-3 col-xl-2">
+        <div class="product p-3" >
+          <div class="img">
+            <img [src]="'/assets/products/pro-2.jpg'" width="180" height="180" class="img-fluid" />
+          </div>
+          <div class="pt-3 pb-0 mb-0">
+            <h5 class="mb-0">Oleo Reparador</h5>
+            <h4 class="mb-0">lúmina</h4>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-3 col-md-6 mt-3 col-xl-2">
+        <div class="product p-3" >
+          <div class="img">
+            <img [src]="'/assets/products/pro-2.jpg'" width="180" height="180" class="img-fluid" />
+          </div>
+          <div class="pt-3 pb-0 mb-0">
+            <h5 class="mb-0">Oleo Reparador</h5>
+            <h4 class="mb-0">lúmina</h4>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-3 col-md-6 mt-3 col-xl-2">
+        <div class="product p-3" >
+          <div class="img">
+            <img [src]="'/assets/products/pro-2.jpg'" width="180" height="180" class="img-fluid" />
+          </div>
+          <div class="pt-3 pb-0 mb-0">
+            <h5 class="mb-0">Oleo Reparador</h5>
+            <h4 class="mb-0">lúmina</h4>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-3 col-md-6 mt-3 col-xl-2">
+        <div class="product p-3" >
+          <div class="img">
+            <img [src]="'/assets/products/pro-2.jpg'" width="180" height="180" class="img-fluid" />
+          </div>
+          <div class="pt-3 pb-0 mb-0">
+            <h5 class="mb-0">Oleo Reparador</h5>
+            <h4 class="mb-0">lúmina</h4>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+
+  </div>
+</app-container>

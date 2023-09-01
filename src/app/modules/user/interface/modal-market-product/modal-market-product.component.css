@@ -1,0 +1,62 @@
+h1 {
+  font-family: "Montserrat Bold";
+  color: black;
+  font-size: 1.2rem;
+  padding-bottom: 1.2rem;
+}
+
+input,
+label {
+  font-family: "Montserrat Bold";
+  color: black;
+  font-size: 0.8rem;
+}
+
+.form-control:focus {
+  color: #212529;
+  border-color: white;
+  outline: 0;
+  box-shadow: 0 0 0 0.25rem rgb(205 205 205 / 25%);
+}
+
+ngx-awesome-uploader {
+  display: contents;
+}
+
+.uploader-wrapper {
+  width: 100% !important;
+}
+
+ngx-awesome-uploader p {
+  color: black;
+}
+
+.search {
+  background: #f3f6f9;
+  padding-left: 44px;
+}
+
+mat-icon {
+  position: absolute;
+  padding-top: 5px;
+  padding-left: 13px;
+  color: #707981;
+}
+
+span {
+  font-family: "Montserrat Regular";
+  color: black;
+  font-size: 0.8rem;
+}
+
+.text-market {
+  display: flex;
+  flex-direction: column;
+  height: 70px;
+  justify-content: center;
+}
+
+.market-shadow {
+  box-shadow: 0px 3px 13px 3px rgb(181 177 177 / 35%);
+  border-radius: 5px;
+}
