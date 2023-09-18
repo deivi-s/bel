@@ -4,104 +4,36 @@
 
     <div class="col-12 mb-3">
       <mat-icon matSuffix>search</mat-icon>
-      <input
-        matInput
-        type="text"
-        class="form-control search"
-        placeholder="Buscar tienda"
-      />
+      <input matInput type="text" class="form-control search" placeholder="Buscar tienda" (input)="buscar($event)" />
     </div>
     <div class="col-12 mb-3 p-4">
-      <div class="row market-shadow p-2 mb-2">
+      <div class="row market-shadow p-2 mb-2" *ngFor="let market of listMarkets; let i = index">
         <div class="col-1">
           <div class="img text-market">
-            <img
-              [src]="'/assets/products/market-01.png'"
-              width="70"
-              height="70"
-              class="img-fluid"
-            />
+            <img [src]="market.foto" width="70" height="70" class="img-fluid" />
           </div>
         </div>
         <div class="col-5">
           <div>
-            <label class="form-label text-market">BarberShop</label>
+            <label class="form-label text-market">{{market.nombre}}</label>
           </div>
         </div>
         <div class="col-5">
           <div class="d-inline-flex">
-            <span class="text-market">Gral. Manuel Baquedano # 2977</span>
-            <span class="text-market p-2"><a href="">Visitar Sitio</a></span>
+            <span class="text-market">{{market.direccion}}</span>
+            <span class="text-market p-2"><a [href]="market.link" target="_blank">Visitar Sitio</a></span>
           </div>
         </div>
         <div class="col-1">
           <div class="text-market">
-            <mat-checkbox value="1" color="warn"></mat-checkbox>
-          </div>
-        </div>
-      </div>
-
-      <div class="row market-shadow p-2 mb-2">
-        <div class="col-1">
-          <div class="img text-market">
-            <img
-              [src]="'/assets/products/market-01.png'"
-              width="70"
-              height="70"
-              class="img-fluid"
-            />
-          </div>
-        </div>
-        <div class="col-5">
-          <div>
-            <label class="form-label text-market">BarberShop</label>
-          </div>
-        </div>
-        <div class="col-5">
-          <div class="d-inline-flex">
-            <span class="text-market">Gral. Manuel Baquedano # 2977</span>
-            <span class="text-market p-2"><a href="">Visitar Sitio</a></span>
-          </div>
-        </div>
-        <div class="col-1">
-          <div class="text-market">
-            <mat-checkbox value="1" color="warn"></mat-checkbox>
-          </div>
-        </div>
-      </div>
-
-      <div class="row market-shadow p-2 mb-2">
-        <div class="col-1">
-          <div class="img text-market">
-            <img
-              [src]="'/assets/products/market-01.png'"
-              width="70"
-              height="70"
-              class="img-fluid"
-            />
-          </div>
-        </div>
-        <div class="col-5">
-          <div>
-            <label class="form-label text-market">BarberShop</label>
-          </div>
-        </div>
-        <div class="col-5">
-          <div class="d-inline-flex">
-            <span class="text-market">Gral. Manuel Baquedano # 2977</span>
-            <span class="text-market p-2"><a href="">Visitar Sitio</a></span>
-          </div>
-        </div>
-        <div class="col-1">
-          <div class="text-market">
-            <mat-checkbox value="1" color="warn"></mat-checkbox>
+            <mat-checkbox value="1" color="warn" [checked]="market.checked" (change)="valueChange($event, i)"></mat-checkbox>
           </div>
         </div>
       </div>
     </div>
 
     <div class="col-3 offset-9">
-      <button mat-raised-button class="color-primary w-100">Guardar</button>
+      <button mat-raised-button class="color-primary w-100" (click)="guardar()">Guardar</button>
     </div>
   </div>
 </div>

@@ -40,3 +40,9 @@ h5{
   font-size: 1.2rem;
   text-align: center;
 }
+
+.product img{
+  border-top-right-radius: 10px;
+  border-top-left-radius: 10px;
+  width: 100%;
+}

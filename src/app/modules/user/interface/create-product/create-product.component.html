@@ -1,43 +1,67 @@
 <app-container>
-  <div>
+  <div [formGroup]="frmProduct">
     <div class="row p-5">
       <h1>Crear Producto</h1>
       <div class="col-12 mb-5">
         <label class="form-label">Nombre</label>
-        <input type="text" class="form-control" />
+        <input type="text" class="form-control" formControlName="nombre"
+        [ngClass]="{
+          'is-invalid': submited && !frmProduct.controls['nombre'].valid
+        }" />
       </div>
       <div class="col-12 mb-5">
         <div class="d-flex justify-content-between">
           <label class="form-label mb-0">Caracteristicas</label>
-          <button mat-raised-button class="color-primary w-5 mt-1">
+          <button mat-raised-button class="color-primary w-5 mt-1" (click)="addDescription()">
             <img src="assets/menu/plus.png" class="icon" class="img-upload" width="20" />
           </button>
         </div>
         <hr class="mt-3" />
-        <div class="characteristics p-4">
+        <div class="characteristics p-4 mb-2" *ngFor="let description of listDescription; let i = index">
           <div class="col-12 mb-4">
             <label class="form-label">Título</label>
-            <input type="text" class="form-control" placeholder="Ingrese el título de la característica. (Descripción, contenido, modo de uso, etc)" />
+            <input type="text" class="form-control" placeholder="Ingrese el título de la característica. (Descripción, contenido, modo de uso, etc)" [(ngModel)]="description.titulo"  [ngModelOptions]="{standalone: true}" />
           </div>
           <div class="col-12 mb-4">
             <label class="form-label">Detalle</label>
-            <textarea type="text" class="form-control"> </textarea>
+            <textarea type="text" class="form-control" [(ngModel)]="description.descripcion"  [ngModelOptions]="{standalone: true}"> </textarea>
           </div>
-          <div class="col-lg-2 offset-lg-10 col-xs-12">
-            <button mat-raised-button class="color-primary w-100 mt-1">
-              Agregar
+          <div class="col-lg-1 offset-lg-11 col-xs-12 text-right">
+            <button mat-raised-button class="color-primary w-10 mt-1" (click)="deleteRow(i)">
+              <mat-icon class="trash">delete_outline</mat-icon>
             </button>
           </div>
+        </div>
+        <div class="col-lg-2 offset-lg-10 col-xs-12" *ngIf="listDescription.length">
+          <button mat-raised-button class="color-primary w-100 mt-1" (click)="saveDescription()">
+            Agregar
+          </button>
         </div>
       </div>
       <div class="col-12 mb-5">
         <label class="form-label mb-0">Tiendas que ofrecen el producto</label>
         <hr class="mt-3" />
         <div class="col-2 offset-5 mt-3 text-center">
-          <span>No hay tiendas seleccionadas</span>
+          <span *ngIf="!listMarkets.length">No hay tiendas seleccionadas</span>
           <button mat-raised-button class="color-primary w-100 mt-1" (click)="addMarket()">
             Agregar
           </button>
+        </div>
+        <div class="col-12">
+          <div class="row d-flex justify-content-center row-cols-5" >
+            <div class="col-lg-3 col-md-6 mt-3 col-xl-2" *ngFor="let market of listMarkets">
+              <div class="product" >
+                <div class="img">
+                  <img [src]="market.foto" width="180" height="180" class="img-fluid" />
+                </div>
+                <div class="pt-3 pb-0 mb-0">
+                  <h5 class="mb-0">{{market.nombre}}</h5>
+      
+                </div>
+              </div>
+            </div>
+      
+          </div>
         </div>
       </div>
 
@@ -70,13 +94,13 @@
         <hr class="mt-3" />
         <div class="col-2 offset-5 mt-3 text-center">
           <span>Producto no configurado</span>
-          <button mat-raised-button class="color-primary w-100 mt-1">
+          <button mat-raised-button class="color-primary w-100 mt-1" (click)="configProduct()">
             Configurar
           </button>
         </div>
       </div>
       <div class="col-3 offset-9 mt-4">
-        <button mat-raised-button class="color-primary w-100">Crear</button>
+        <button mat-raised-button class="color-primary w-100" (click)="save()">Crear</button>
       </div>
     </div>
   </div>

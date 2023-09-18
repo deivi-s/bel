@@ -3,7 +3,10 @@ import {
   OnInit,
 } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
-import { Router } from '@angular/router';
+import {
+  ActivatedRoute,
+  Router,
+} from '@angular/router';
 
 import { LayoutService } from 'src/app/config/services/layout.service';
 
@@ -16,26 +19,57 @@ import { ModalMarketComponent } from '../modal-market/modal-market.component';
   styleUrls: ['./market.component.css'],
 })
 export class MarketComponent implements OnInit {
+  listMarkets: any[] = [];
   constructor(
     private layoutService: LayoutService,
     private readonly router: Router,
     private readonly userAdmin: UserInfrastructure,
-    public dialog: MatDialog
+    public dialog: MatDialog,
+    private routerActivated: ActivatedRoute
   ) {
     this.layoutService.configuration = { header: true, menu: true };
 
   }
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.getAllMarkets();
+    this.routerActivated.params.subscribe(params => {
+      this.getAllMarkets();
+    });
+
+  }
+
+  
+
+  getAllMarkets() {
+    this.userAdmin.getMarkets().subscribe({
+      next: (data: any) => {
+        this.listMarkets = data;
+      },
+    });
+  }
+
+  create() {
+    this.userAdmin.getMarkets().subscribe({
+      next: (data: any) => {
+        this.listMarkets = data;
+      },
+    });
+  }
 
   openDialog() {
-   this.dialog.open(ModalMarketComponent, {
-    width: '60%'
-   })
+    let dialogRef = this.dialog.open(ModalMarketComponent, {
+      width: '60%'
+    });
+
+
+    dialogRef.afterClosed().subscribe(() => {
+      this.getAllMarkets();
+    });
+
   }
 
-  edit(){
-    this.router.navigate([`/administrator/market/edit/${1}`]);
+  edit(id: number) {
+    this.router.navigate([`/administrator/market/edit/${id}`]);
   }
-
 }

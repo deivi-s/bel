@@ -63,3 +63,34 @@ hr {
   padding-top: 7px;
   padding-bottom: 7px;
 }
+
+.text-right{
+  text-align: right;
+}
+
+
+
+
+.product {
+  background: #FFFFFF;
+  border-radius: 10px;
+  box-shadow: 0px 3px 13px 3px rgba(255, 253, 253, 0.35);
+  height: 270px;
+}
+
+.img {
+  text-align: center !important;
+}
+
+h5{
+  font-family: 'Montserrat Bold';
+  color: black;
+  font-size: 1.2rem;
+  text-align: center;
+}
+
+.product img{
+  border-top-right-radius: 10px;
+  border-top-left-radius: 10px;
+  width: 100%;
+}

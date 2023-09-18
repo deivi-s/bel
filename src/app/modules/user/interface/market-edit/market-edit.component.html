@@ -1,34 +1,48 @@
 <app-container>
-  <div>
+  <div [formGroup]="frmMarket">
     <div class="row p-5">
       <h1>BarberShop</h1>
       <div class="col-12 mb-3">
         <label class="form-label">Nombre</label>
-        <input type="text" class="form-control" />
+        <input type="text" class="form-control" formControlName="nombre" [ngClass]="{
+        'is-invalid': submited && !frmMarket.controls['nombre'].valid
+      }" />
       </div>
       <div class="col-12 mb-3">
         <label class="form-label">Descripción</label>
-        <textarea type="text" class="form-control"> </textarea>
+        <textarea type="text" class="form-control" formControlName="descripcion" [ngClass]="{
+        'is-invalid': submited && !frmMarket.controls['descripcion'].valid
+      }"> </></textarea>
       </div>
       <div class="col-12 mb-3">
         <label class="form-label">Dirección</label>
-        <input type="text" class="form-control" />
+        <input type="text" class="form-control" formControlName="direccion" [ngClass]="{
+        'is-invalid': submited && !frmMarket.controls['direccion'].valid
+      }" />
       </div>
       <div class="col-12 mb-3">
         <label class="form-label">Link tienda</label>
-        <input type="text" class="form-control" />
+        <input type="text" class="form-control" formControlName="link" [ngClass]="{
+        'is-invalid': submited && !frmMarket.controls['link'].valid
+      }" />
       </div>
       <div class="col-12 mb-3">
         <label class="form-label">Responsable</label>
-        <input type="text" class="form-control" />
+        <input type="text" class="form-control" formControlName="responsable" [ngClass]="{
+        'is-invalid': submited && !frmMarket.controls['responsable'].valid
+      }" />
       </div>
       <div class="col-6 mb-3">
         <label class="form-label">Telefono</label>
-        <input type="text" class="form-control" />
+        <input type="text" class="form-control" formControlName="telefono" [ngClass]="{
+        'is-invalid': submited && !frmMarket.controls['telefono'].valid
+      }" />
       </div>
       <div class="col-6 mb-3">
         <label class="form-label">Email</label>
-        <input type="email" class="form-control" />
+        <input type="email" class="form-control" formControlName="email" [ngClass]="{
+        'is-invalid': submited && !frmMarket.controls['email'].valid
+      }" />
       </div>
       <div class="col-12 mb-3">
         <ngx-awesome-uploader
@@ -38,6 +52,7 @@
           (uploadSuccess)="uploadSuccess($event)"
           (validationError)="onValidationError($event)"
           [fileMaxCount]="1"
+          #uploader
         >
           <div class="dropzoneTemplate">
             <img
@@ -53,7 +68,7 @@
         </ngx-awesome-uploader>
       </div>
       <div class="col-3 offset-9 mt-4">
-        <button mat-raised-button class="color-primary w-100">Crear</button>
+        <button mat-raised-button class="color-primary w-100" (click)="editar()">Editar</button>
       </div>
     </div>
   </div>

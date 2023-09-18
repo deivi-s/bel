@@ -13,6 +13,7 @@ import { LAYOUT_TOKEN } from '../tokens/layout.token';
 })
 export class LayoutService {
   private readonly configBehaviorSubject !: BehaviorSubject<ILayout>;
+  foto = new BehaviorSubject<any>('');
   userData = new BehaviorSubject<any>(null);
 
 

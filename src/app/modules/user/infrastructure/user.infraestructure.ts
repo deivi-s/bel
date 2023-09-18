@@ -72,5 +72,43 @@ export class UserInfrastructure
     return this.http.post<any>(`${environment.apiPath}/usuarios/actualizar`, user);
   }
 
+  getMarkets(): Observable<any> {
+    return this.http.get<any>(`${environment.apiPath}/productos/tiendas/obtener`);
+  }
+
+  createMarket(data: any): Observable<any> {
+    return this.http.post<any>(`${environment.apiPath}/productos/tienda/crear`, data);
+  }
+
+  editMarket(id: string, data: any): Observable<any> {
+    return this.http.patch<any>(`${environment.apiPath}/productos/tienda/editar/${id}`, data);
+  }
+
+  getMarketById(id: string): Observable<any> {
+    return this.http.get<any>(`${environment.apiPath}/productos/tienda/${id}`);
+  }
+
+  saveMarketProduct(data: any): Observable<any> {
+    return this.http.post<any>(`${environment.apiPath}/productos/tienda/asociar`, data);
+  }
+
+  getMarketProduct(id: number): Observable<any> {
+    return this.http.get<any>(`${environment.apiPath}/productos/tienda/asociar/${id}`);
+  }
+
+  updateMarketProduct(id: string, data: any): Observable<any> {
+    return this.http.patch<any>(`${environment.apiPath}/productos/tienda/asociar/${id}`, data);
+  }
+  createProduct(data: any): Observable<any> {
+    return this.http.post<any>(`${environment.apiPath}/productos/crear`, data);
+  }
+
+  createDescriptionProduct(id: number, data: any): Observable<any> {
+    return this.http.patch<any>(`${environment.apiPath}/productos/descripcion/agregar/${id}`, data);
+  }
+
+  getDescriptionProduct(id: number): Observable<any> {
+    return this.http.get<any>(`${environment.apiPath}/productos/descripcion/obtener/${id}`);
+  }
 
 }

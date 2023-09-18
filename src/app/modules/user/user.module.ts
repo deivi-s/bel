@@ -15,19 +15,20 @@ import {
 import { MatIconModule } from '@angular/material/icon';
 import { MatRadioModule } from '@angular/material/radio';
 import { MatSelectModule } from '@angular/material/select';
+import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 
 import { FilePickerModule } from 'ngx-awesome-uploader';
 import { SharedModule } from 'src/app/shared/shared.module';
 
+import {
+  ConfigProductComponent,
+} from './interface/config-product/config-product.component';
 import {
   CreateProductComponent,
 } from './interface/create-product/create-product.component';
 import {
   DetailProductComponent,
 } from './interface/detail-product/detail-product.component';
-import {
-  MarketEditComponent,
-} from './interface/market-edit/market-edit.component';
 import { MarketComponent } from './interface/market/market.component';
 import {
   ModalMarketProductComponent,
@@ -41,6 +42,7 @@ import { RecommendComponent } from './interface/recommend/recommend.component';
 import { FilterPipe } from './interface/user/filter.pipe';
 import { UserComponent } from './interface/user/user.component';
 import { UserRoutingModule } from './user-routing.module';
+import { MarketEditComponent } from './interface/market-edit/market-edit.component';
 
 @NgModule({
   declarations: [
@@ -55,6 +57,7 @@ import { UserRoutingModule } from './user-routing.module';
     MarketEditComponent,
     CreateProductComponent,
     ModalMarketProductComponent,
+    ConfigProductComponent
   ],
   imports: [
     CommonModule,
@@ -70,7 +73,8 @@ import { UserRoutingModule } from './user-routing.module';
     MatDialogModule,
     FilePickerModule,
     MatRadioModule,
-    MatCheckboxModule
+    MatCheckboxModule,
+    MatSlideToggleModule
   ],
   providers: [
     {

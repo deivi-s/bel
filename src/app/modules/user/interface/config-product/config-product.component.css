@@ -1,0 +1,103 @@
+h1 {
+  font-family: "Montserrat Bold";
+  color: black;
+  font-size: 1rem;
+  padding-left: 24px;
+  padding-right: 24px;
+}
+
+.title-config {
+  padding-left: 25px;
+  padding-right: 25px;
+}
+
+input,
+label {
+  font-family: "Montserrat Bold";
+  color: black;
+  font-size: 0.8rem;
+}
+
+.form-control:focus {
+  color: #212529;
+  background-color: #fff;
+  border-color: white;
+  outline: 0;
+  box-shadow: 0 0 0 0.25rem rgb(205 205 205 / 25%);
+}
+
+ngx-awesome-uploader {
+  display: contents;
+}
+
+.uploader-wrapper {
+  width: 100% !important;
+}
+
+ngx-awesome-uploader p {
+  color: #2d2d2d;
+}
+
+.color-button {
+  border-radius: 20px !important;
+  font-size: 0.9rem;
+}
+
+.color-button-green {
+  border-radius: 30px !important;
+  border: 3px solid #b3b3b3;
+  box-shadow: none;
+  font-size: 0.9rem;
+}
+
+.mat-button-toggle-standalone.mat-button-toggle-appearance-standard,
+.mat-button-toggle-group-appearance-standard {
+  border: none;
+}
+
+.mat-button-toggle[_ngcontent-yrf-c267] {
+  padding-top: 12px;
+  padding-bottom: 12px;
+}
+
+.mat-button-toggle {
+  white-space: nowrap;
+  position: relative;
+}
+.color-transparent {
+  color: black;
+  border-radius: 30px !important;
+  border: 3px solid #b3b3b3 !important;
+  font-family: "Montserrat Bold";
+}
+
+.multi {
+  margin-left: 0.5px;
+}
+
+.orange {
+  color: #d45401;
+  font-family: "Montserrat Bold";
+  font-size: 0.9rem;
+  text-transform: uppercase;
+}
+
+input {
+  text-align: center;
+  font-family: "Montserrat Bold";
+  background: #ffffff;
+  border: 3px solid #b3b3b3;
+  color: #2d2d2d;
+  border-radius: 30px;
+  padding-right: 0px;
+  width: 80px;
+  font-size: 0.8rem;
+  padding-left: 10px;
+}
+
+.dir-flex {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: center;
+}
+

@@ -1,0 +1,175 @@
+<div>
+  <div class="row p-2 edit-market mb-5">
+    <h1 class="pl-2 pr-2">Configurar producto</h1>
+    <div *ngIf="!countAnswers.length" class="title-config">
+      <div class="pb-2 mt-3 text-left">
+        <span class="title-white text-left pt-2"
+          >Seleccionar el tipo de producto</span
+        >
+      </div>
+      <div class="mt-2">
+        <div
+          class="col-12 mt-3 text-center"
+          *ngFor="let categorie of listCategories"
+        >
+          <button
+            mat-raised-button
+            class="color-button w-50"
+            (click)="mainQuestion(categorie.id)"
+          >
+            {{ categorie.nombre }}
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <mat-button-toggle-group
+      multiple
+      class="row multi"
+      [(ngModel)]="toggleData"
+      *ngIf="!enviado"
+    >
+      <div *ngIf="countAnswers.length">
+        <div class="mt-2">
+          <div class="pb-2 text-left d-flex justify-content-between">
+            <span class="title-white text-left pt-2 orange">{{
+              question.pregunta
+            }}</span>
+            <mat-slide-toggle color="warn" class="pt-1">Multiple</mat-slide-toggle>
+          </div>
+          <div class="col-12 mt-3 text-center dir-flex">
+            <button
+              mat-raised-button
+              class="color-button-green w-50"
+              *ngIf="question.opcion_a && !question.multi"
+              (click)="answer(question.id, question.opcion_a)"
+            >
+              {{ question.opcion_a }}
+            </button>
+            <mat-button-toggle
+              [value]="question.opcion_a"
+              mat-raised-button
+              class="color-transparent w-50 toogle-btn"
+              *ngIf="question.opcion_a && question.multi"
+            >
+              {{ question.opcion_a }}</mat-button-toggle
+            >
+            <input type="number" class="form-control" min="0" max="100" value="0" *ngIf="question.opcion_a"/>
+          </div>
+          <div class="col-12 mt-3 text-center dir-flex">
+            <button
+              mat-raised-button
+              class="color-button-green w-50"
+              *ngIf="question.opcion_b && !question.multi"
+              (click)="answer(question.id, question.opcion_b)"
+            >
+              {{ question.opcion_b }}
+            </button>
+            <mat-button-toggle
+              [value]="question.opcion_b"
+              mat-raised-button
+              class="color-transparent w-50 toogle-btn"
+              *ngIf="question.opcion_b && question.multi"
+            >
+              {{ question.opcion_b }}</mat-button-toggle
+            >
+             <input type="number" class="form-control" min="0" max="100" value="0" *ngIf="question.opcion_b"/>
+
+          </div>
+          <div class="col-12 mt-3 text-center dir-flex">
+            <button
+              mat-raised-button
+              class="color-button-green w-50"
+              *ngIf="question.opcion_c && !question.multi"
+              (click)="answer(question.id, question.opcion_c)"
+            >
+              {{ question.opcion_c }}
+            </button>
+            <mat-button-toggle
+              [value]="question.opcion_c"
+              mat-raised-button
+              class="color-transparent w-50 toogle-btn"
+              *ngIf="question.opcion_c && question.multi"
+            >
+              {{ question.opcion_c }}</mat-button-toggle
+            >
+             <input type="number" class="form-control" min="0" max="100" value="0" *ngIf="question.opcion_c"/>
+          </div>
+          <div class="col-12 mt-3 text-center dir-flex">
+            <button
+              mat-raised-button
+              class="color-button-green w-50"
+              *ngIf="question.opcion_d && !question.multi"
+              (click)="answer(question.id, question.opcion_d)"
+            >
+              {{ question.opcion_d }}
+            </button>
+            <mat-button-toggle
+              [value]="question.opcion_d"
+              mat-raised-button
+              class="color-transparent w-50 toogle-btn"
+              *ngIf="question.opcion_d && question.multi"
+            >
+              {{ question.opcion_d }}</mat-button-toggle
+            >
+             <input type="number" class="form-control" min="0" max="100" value="0" *ngIf="question.opcion_d"/>
+          </div>
+          <div class="col-12 mt-3 text-center dir-flex">
+            <button
+              mat-raised-button
+              class="color-button-green w-50"
+              *ngIf="question.opcion_e && !question.multi"
+              (click)="answer(question.id, question.opcion_e)"
+            >
+              {{ question.opcion_e }}
+            </button>
+            <mat-button-toggle
+              [value]="question.opcion_e"
+              mat-raised-button
+              class="color-transparent w-50 toogle-btn"
+              *ngIf="question.opcion_e && question.multi"
+            >
+              {{ question.opcion_e }}</mat-button-toggle
+            >
+             <input type="number" class="form-control" min="0" max="100" value="0" *ngIf="question.opcion_e"/>
+          </div>
+        </div>
+      </div>
+    </mat-button-toggle-group>
+
+    <!-- <div
+      class="mt-3"
+      *ngIf="
+        countAnswers.length && question.multi && toggleData?.length && !enviado
+      "
+    >
+      <div class="mt-3">
+        <div class="col-12 mt-3 text-center">
+          <button
+            mat-raised-button
+            class="color-button w-50"
+            (click)="sendMulti(question.id)"
+          >
+            Continuar
+          </button>
+        </div>
+      </div>
+    </div>
+    <div
+      class="mt-3"
+      *ngIf="
+        listQuestions[listQuestions.length - 1]?.id === question?.id &&
+        this.countAnswers[this.countAnswers.length - 1]?.respuesta &&
+        enviado
+      "
+    >
+      <div class="pt-5 mt-3">
+        <div class="col-12 mt-3 text-center">
+          <button mat-raised-button class="color-primary w-50" (click)="send()">
+            Finalizar
+          </button>
+        </div>
+      </div>
+    </div> -->
+  </div>
+</div>
